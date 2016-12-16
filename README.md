@@ -397,8 +397,15 @@ print(stringArray[0])   // 访问第0个值, 数组的元素是从0开始记的
 // 例如以下定义了 Int 的类型别名为 Feet：
 typealias Feet = Int
 
+// 由于前面已经定义了类型别名，那么这里使用Feet也相当于使用Int
+// 所以AudioSample.min = Int.min,也就是0.  
+var maxAmplitudeFound = Feet.min;
+// 几面输出 maxAmplitudeFound: Int = -9223372036854775808
+
 // 现在，我们可以通过别名来定义变量：
-import Cocoatypealias Feet = Intvar distance: Feet = 100print(distance)
+typealias:Feet = Intvar 
+distance: Feet = 100
+print(distance)
 // 我们使用 playground 执行以上程序，输出结果为：
 // 100·
 ```
