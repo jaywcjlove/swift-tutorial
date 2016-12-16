@@ -1,0 +1,448 @@
+
+Swift入门教程
+---
+
+# 目录
+
+- [准备环境](#准备环境)
+- [swiftc](#swiftc)
+- [print](#print)
+- [字符串拼接](#字符串拼接)
+- [注释](#注释)
+- [常量、变量](#常量、变量)
+- [运算符](#运算符)
+- [数据类型与可选类型](#数据类型与可选类型)
+- [问题解决](#问题解决)
+
+## 准备环境
+
+在 Mac 上学习 Swift 非常简单，你只需在 App Store 中安装 [Xcode](https://itunes.apple.com/cn/app/xcode/id497799835) 即可。接下来，你有两种方法来学习 Swift 基础语法。
+
+**方法一：通过命令行**  
+
+你只需打开 Terminal 运行 swift 命令即可：
+
+```
+$ swift
+Welcome to Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1). Type :help for assistance.
+  1> var str = "Hello Siwft!"
+str: String = "Hello Siwft!"
+  2>:q   //:q是推出命令
+```
+
+运行 Swift 文件，在学习过程中，可以把一些存成 .swift 后缀的文件，通过 `swift filename.swift` 命令运行它输出结果。
+
+**方法二：通过Xcode运行**  
+
+打开 Xcode 软件，可以看到一个Xcode的欢迎界面，如果欢迎界面没有出来，你可以使用快捷键唤出 `⇧+⌘+1`(shift+command+1)，在欢迎界面上可以看到 **Get started with a playground** 菜单，点击它建立一个 playground 的文件。我们可以在上面写代码，实时运行 swift 代码打印出运行结果。
+
+## swiftc命令
+
+上面通过swift运行程序，同时我们可以通过swiftc编译命令，编译成一个可执行的文件，直接运行可执行文件，遐想一下，感觉我们用swift可以干好多活儿。下面来运行一个 Hello World。
+
+我们使用函数 print 来输出一个 Hello World 字符串。建立一个 [demo1.swift](examples/demo1.swift) 输入下面代码，放到了 examples 目录中：
+
+```
+print("Hello world!")
+```
+ 
+将 examples 目录中的 [demo1.swift](examples/demo1.swift) 文件，编译出的可执行文件输出到 examples 目录中 文件名为 demo
+
+```
+swiftc examples/demo1.swift -o examples/demo
+```
+
+通过 swift 运行 demo 并输出 Hello world!。
+
+```
+./examples/demo
+```
+
+## print
+
+它是一个输出函数，在 [demo1.swift](examples/demo1.swift) 中我们使用过这个函数，现在建立 [demo1.swift](examples/demo1.swift) 文件，通过print函数输出多个值，使用 print的参数separator将分隔符自定义一下。例如：
+
+```swift
+let year = 1987
+var month = 11
+var day = 3
+print(year,month,day,separator:"-")
+```
+
+运行测试它，我们将看到输出结果：
+
+```
+$ swift examples/demo2.swift
+1987-11-3
+```
+
+## 字符串拼接
+
+特别注意，在变量上面可以使用`+`来拼接字符串，常量拼接字符串会报错，常量和变量拼接同样报错。[demo12.swift](examples/demo12.swift)
+
+```swift
+var version = 3
+let tutorial = "Swift \(version) tutorial"
+let message = "Hello \(tutorial)!"
+var name = "Hello !" + "sdsd"
+print(tutorial)
+print(message)
+```
+
+## 注释
+
+Swift注释与JS注释一样。
+
+段落注释
+
+```
+/*
+ 这里是段落注释
+ */
+```
+
+单行注释
+
+```
+// 这里是单行注释
+```
+
+## 常量、变量
+
+- let常量，不能更改的值（immutable）
+- var变量，可以更改的值（mutable）
+
+声明一个名字叫做 constNumber 的常量，并给它一个值 1987 ，声明一个名字叫做 variableNumber 的变量，并给它一个值为 13，分别输出 constNumber 和 variableNumber 的值，将它保存到 [demo3.swift](examples/demo3.swift) 中：
+
+```swift
+let constNumber = 1987
+var variableNumber = 13
+
+print(constNumber)
+print(variableNumber)
+```
+
+运行测试它，我们将看到输出结果：
+
+```
+$ swift examples/demo3.swift
+1987
+13
+```
+
+通过上面的例子，我们来测试一下常量和变量的特性，下面代码保存到 [demo4.swift](examples/demo4.swift) 文件中
+
+```
+let constNumber = 1987
+var variableNumber = 13
+constNumber = variableNumber + 1
+print(constNumber)
+```
+
+上面这个错误的例子是，将变量 variableNumber 加 1 赋值给常量 constNumber。这是一个错误的演示，它运行会曝出错误信息，如果你使用 Xcode 将自动有个错误提示，你只需直接点击错误信息就可以自动修改错误，好智能的功能哦。
+
+```
+$ swift examples/demo4.swift
+examples/demo4.swift:4:13: error: cannot assign to value: 'constNumber' is a 'let' constant
+constNumber = variableNumber + 1
+~~~~~~~~~~~ ^
+examples/demo4.swift:1:1: note: change 'let' to 'var' to make it mutable
+let constNumber = 1987
+^~~
+var
+```
+
+## 运算符
+
+用来做运算的，上面例子已经使用了运算符 `-`，其实就是跟数学运算是一样的
+
+- 加`+`
+- 减`-`
+- 乘`*`
+- 除`/`
+- 求余`%`
+- 相等`==`
+- 不等于`a != b`
+- 大于`a > b`
+- 小于`a < b`
+- 大于等于`a >= b`
+- 小于等于`a <= b`
+
+**赋值运算符** [demo5.swift](examples/demo5.swift)  
+
+```swift
+let constNumber = 1987              // 声明常量 constNumber 值为 1987
+var variableNumber = 13             // 声明变量 variableNumber 值为 13
+variableNumber = constNumber - 1    // 这里赋值，常量 constNumber 减 1 赋值给变量 variableNumber
+print(variableNumber)               // 将 variableNumber 最终的值输出
+```
+
+运行结果
+
+```
+$ swift examples/demo5.swift
+1986
+```
+
+**算数运算符** [demo6.swift](examples/demo6.swift)  
+
+算数运算符也就是我们常见到的数学运算了，加`+`、 减`-`、 乘`*`、 除`/`、 求余`%`。
+
+```swift
+print(1 + 2 + 3)           //  输出 6
+print(15 - 3)              //  输出 12
+print(23 * 3)              //  输出 69
+print(100.0 / 2.5)         //  输出 40.0
+print(90 % 4)              //  输出 2
+print("Hello " + "Swift!") //  输出 Hello Swift!
+```
+
+运行结果
+
+```
+$ swift examples/demo6.swift
+6
+12
+69
+40.0
+2
+Hello Swift!
+```
+
+**组合赋值运算符**  
+
+比如下面这样的代码，我们完全可以使用组合赋值运算符简写。
+
+```
+var variableNumber = 13
+
+// 这句是可以使用组合赋值运算符简写
+variableNumber = variableNumber + 1
+
+// 简写
+variableNumber += 1
+```
+
+来个各种合赋值运算符例子 [demo7.swift](examples/demo7.swift)
+
+```swift
+var example = 13
+
+print("输出结果：",example)
+example += 1
+print("输出结果：",example)
+example -= 1
+print("输出结果：",example)
+example *= 2
+print("输出结果：",example)
+example /= 1
+print("输出结果：",example)
+example %= 1
+print("输出结果：",example)
+```
+
+**比较运算符**  
+
+可以通过 相等`==`、 不等于`a != b`、 大于`a > b`、 小于`a < b`、 大于等于`a >= b`、 小于等于`a <= b`进行比较运算。
+
+例如：`print(12 != 1)` 将会返回一个布尔值 ture
+
+
+**三目运算符**[demo8.swift](examples/demo8.swift)  
+
+三目运算符也就是三元运算符 `判断条件 ? 答案 1 : 答案 2`
+
+```swift
+var a = 86
+var b = a != 86 ? "歪果仁" : "中国人"
+print( b )
+```
+
+**区间运算符**  
+
+- 闭区间运算符（`a...b`）定义一个包含从 a 到 b（包括 a 和 b）的所有值的区间。a 的值不能超过 b。
+- 半开区间（`a..<b`）定义一个从 a 到 b 但不包括 b 的区间。之所以称为半开区间，是因为该区间包含第一个值而不包括最后的值。
+
+```swift
+1...5
+1..<5
+// 分别表示 1 到 5 和 1 到 4。
+```
+
+关于它的使用，可以配合 for-in 语句，看到下面代码对于 `...` 和 `..<` 之间的不同[demo9.swift](examples/demo9.swift)：
+
+```swift
+print("将输出 1 到 5")
+for i in 1...5 {
+    print(i)
+}
+print("只输出 1 到 4")
+for i in 1..<5 {
+    print(i)
+}
+```
+
+**逻辑运算符**[demo10.swift](examples/demo10.swift)  
+
+三个标准的逻辑运算，非`!`、与`&&`、或`||`
+
+```swift
+var a = true
+var b = false
+print(!a)           // 输出 false
+print(a && b)       // 输出 false
+print(a || b)       // 输出 true
+```
+
+
+## 数据类型与可选类型
+
+在前面的例子中使用了`let` 和 `var` 声明常量和变量，并给这个常量或者变量赋值，Swift 默认情况直接根据后面的赋值，来确定这个变量或者常量的类型，这个是Swift的一个简写方式。那么完整的一个声明变量或常量，是下面的样子[demo11.swift](examples/demo11.swift)
+
+```
+let constNumber: Int = 1987
+var name : String = "我是调调！"
+
+print(constNumber)
+print(name)
+```
+
+### 数值类型
+
+Swift 提供了非常丰富的数据类型
+
+#### 整数类型(Int)
+
+一般来说，你不需要专门指定整数的长度。Swift 提供了一个特殊的整数类型Int，长度与当前平台的原生字长相同[demo13.swift](examples/demo13.swift)：
+
+- 在32位平台上，Int和Int32长度相同。
+- 在64位平台上，Int和Int64长度相同。
+
+```swift
+var version :Int32 = 3
+var version2 :Int64 = 30
+
+print(version)
+print(version2)
+```
+
+#### 浮点数(Double)
+
+- Double表示64位浮点数。当你需要存储很大或者很高精度的浮点数时请使用此类型。
+- Float表示32位浮点数。精度要求不高的话可以使用此类型。
+
+> 注意：
+> Double精确度很高，至少有15位数字，而Float最少只有6位数字。选择哪个类型取决于你的代码需要处理的值的范围。
+
+#### 无符号类型(UInt)
+
+Swift 也提供了一个特殊的无符号类型UInt。
+
+> 注意：
+> 尽量不要使用UInt，除非你真的需要存储一个和当前平台原生字长相同的无符号整数。除了这种情况，最好使用Int，即使你要存储的值已知是非负的。统一使用Int可以提高代码的可复用性，避免不同类型数字之间的转换，并且匹配数字的类型推断。
+
+
+### 布尔类型(Bool)
+
+Swift 有一个基本的布尔（Boolean）类型，叫做Bool。布尔值指逻辑上的值，因为它们只能是真或者假。Swift 有两个布尔常量，true和false。
+
+### 字符和字符串类型(Character/String)
+
+只包含一个字符的时候，我们也可以把它作为字符类型，Character 只是 String 的一种特殊情况，一般来说，我们都使用 String 就好了：
+
+```swift
+var ch: Character = "a"
+```
+
+字符串常量可以包括下面这些特殊字符：
+- 空字符`\0`，反斜杠`\`，制表符`\t`，换行符`\n`，回车符`\r`，双引号`\"`和单引号`\'`
+- 单字节Unicode字符，`\xnn`，其中nn是两个十六进制数
+- 双字节Unicode字符，`\unnnn`，其中nnnn是四个十六进制数
+- 四字节Unicode字符，`\Unnnnnnnn`，其中nnnnnnnn是八个十六进制数
+
+
+### 数组和字典
+
+数组和字典是两种非常长常见的数据类型，在刚才介绍的类型中，一个量通常只能包含一个值。而数组这种类型，就可以容纳相同类型的的多个值；而字典这种类型，可以容纳多个对应关系（一个值唯一对应另一个值）
+
+```swift
+var stringArray: [String] = ["This", "is", "github"]
+
+// 并通过下面的方式可以访问数组和字典中的值
+print(stringArray[0])   // 访问第0个值, 数组的元素是从0开始记的
+```
+
+### 数值范围
+
+下表显示了不同变量类型内存的存储空间，及变量类型的最大最小值：
+
+| 类型 | 大小（字节） | 区间值 |
+| ---- | ---- | ---- |
+| Int8    | 1 字节    | -127 到 127  |
+| UInt8   | 1 字节    | 0 到 255  |
+| Int32   | 4 字节    | -2147483648 到 2147483647  |
+| UInt32  | 4 字节    | 0 到 4294967295  |
+| Int64   | 8 字节    | -9223372036854775808 到 9223372036854775807  |
+| UInt64  | 8 字节    | 0 到 18446744073709551615  |
+| Float   | 4 字节    | 1.2E-38 到 3.4E+38 (~6 digits)  |
+| Double  | 8 字节    | 2.3E-308 到 1.7E+308 (~15 digits)  |
+
+### 类型别名
+
+类型别名对当前的类型定义了另一个名字，类型别名通过使用 typealias 关键字来定义。语法格式如下：
+
+> typealias 类型名字 = type
+
+```swift
+// 例如以下定义了 Int 的类型别名为 Feet：
+typealias Feet = Int
+
+// 现在，我们可以通过别名来定义变量：
+import Cocoatypealias Feet = Intvar distance: Feet = 100print(distance)
+// 我们使用 playground 执行以上程序，输出结果为：
+// 100·
+```
+
+### 元组和集合
+
+元组不是一种类型，但是却是一种可以表示数据的结构。数组保存多个相同类型的值，而元组则可以保存多个不同类型的值，它的用法如下[demo15.swift](examples/demo15.swift)：
+
+```swift
+let awesome = ("Swift", 3, "awesome.")
+let (a, b, c) = awesome
+print(a)    // 输出 Swift
+print(b)    // 输出 3
+print(c)    // 输出 awesome.
+
+// 和数组、字典不同的是，你不能通过[] 的方式来访问元组中的内容，但你可以像这样
+print(awesome.0)
+```
+
+集合的声明和数组非常类似，都是通过 [] 进行，不同的地方在于集合只能容纳不同的值，而数组可以容纳相同的值：
+
+```swift
+let sets: Set<Int> = [1, 2, 3, 4]
+let arrays: Array<Int> = [1, 1, 1, 1]
+```
+
+上面定义了 sets 是一个 Set 集合类型，容纳的是 Int 类型的值，数组同理
+
+默认情况下，如果你不做显式声明，Swift 会默认将其推断为数组类型
+关于集合、数组、字典之间的关系，下面这张图很好的展示了这一切：
+
+
+## 问题解决
+
+- [swift NameError: name 'run_one_line' is not defined](https://github.com/Homebrew/homebrew-core/issues/2712)
+
+
+- https://www.shiyanlou.com/courses/611/labs/2011/document
+- http://c.biancheng.net/cpp/html/2292.html
+- http://www.imooc.com/article- 
+
+- [Swifter.tips](http://swifter.tips)
+- [Swift 学习指引](http://www.swiftguide.cn)
+- [swiftcafe](http://swiftcafe.io)
+- [SwiftGG](http://swift.gg)
+- [swiftweekly](http://swiftweekly.cn)
+- [dianqk](http://blog.dianqk.org)
