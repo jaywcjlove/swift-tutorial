@@ -476,6 +476,8 @@ let arrays: Array<Int> = [1, 1, 1, 1]
 默认情况下，如果你不做显式声明，Swift 会默认将其推断为数组类型
 关于集合、数组、字典之间的关系，下面这张图很好的展示了这一切：
 
+![](img/collection_array_dictionary_comparison.png)
+
 ## 可选和隐式可选类型
 
 - 类型后面用问号 `?` 表示可选类型；
