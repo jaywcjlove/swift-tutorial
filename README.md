@@ -349,13 +349,42 @@ Swift 有一个基本的布尔（Boolean）类型，叫做Bool。布尔值指逻
 
 #### 字符和字符串类型(Character/String)
 
-只包含一个字符的时候，我们也可以把它作为字符类型，Character 只是 String 的一种特殊情况，一般来说，我们都使用 String 就好了：
+只包含一个字符的时候，我们也可以把它作为字符类型，Character 只是 String 的一种特殊情况，一般来说，我们都使用 String 就好了[demo19.swift](examples/demo19.swift)：
 
 ```swift
 var ch: Character = "a"
+var emptyString = ""               // 空字符串字面量
+var anotherEmptyString = String()  // 初始化 String 实例
+// 两个字符串均为空并等价。
+// 通过检查其Boolean类型的isEmpty属性来判断该字符串是否为空
+if emptyString.isEmpty {
+    print("什么都没有")
+}
+// 打印输出："什么都没有"
+let unusualMenagerie = "Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪"
+print("unusualMenagerie has \(unusualMenagerie.characters.count) characters")
+// 打印输出："unusualMenagerie has 40 characters"
+
+// +相加在一起（或称“串联”)
+var str1 = "hello";
+var str2 = " there";
+var str = str1 + str2;
+print(str);
+// welcome 现在等于 "hello there"
+
+let normal = "Could you help me, please?"
+// 转化大写
+let shouty = normal.uppercaseString
+// shouty 值为 "COULD YOU HELP ME, PLEASE?"
+// 转化小写
+let whispered = normal.lowercaseString
+// whispered 值为 "could you help me, please?"
 ```
 
+- 一个字符串中并不一定占用相同的内存空间
+
 字符串常量可以包括下面这些特殊字符：
+
 - 空字符`\0`，反斜杠`\`，制表符`\t`，换行符`\n`，回车符`\r`，双引号`\"`和单引号`\'`
 - 单字节Unicode字符，`\xnn`，其中nn是两个十六进制数
 - 双字节Unicode字符，`\unnnn`，其中nnnn是四个十六进制数
