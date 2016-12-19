@@ -11,7 +11,8 @@ Swift入门教程
 - [注释](#注释)
 - [常量、变量](#常量变量)
 - [运算符](#运算符)
-- [数据类型与可选类型](#数据类型与可选类型)
+- [数据类型](#数据类型)
+- [可选和隐式可选类型)](#可选和隐式可选类型)
 - [问题解决](#问题解决)
 
 ## 准备环境
@@ -132,7 +133,7 @@ $ swift examples/demo3.swift
 
 通过上面的例子，我们来测试一下常量和变量的特性，下面代码保存到 [demo4.swift](examples/demo4.swift) 文件中
 
-```
+```swift
 let constNumber = 1987
 var variableNumber = 13
 constNumber = variableNumber + 1
@@ -295,7 +296,7 @@ print(a || b)       // 输出 true
 ```
 
 
-## 数据类型与可选类型
+## 数据类型
 
 在前面的例子中使用了`let` 和 `var` 声明常量和变量，并给这个常量或者变量赋值，Swift 默认情况直接根据后面的赋值，来确定这个变量或者常量的类型，这个是Swift的一个简写方式。那么完整的一个声明变量或常量，是下面的样子[demo11.swift](examples/demo11.swift)
 
@@ -342,11 +343,11 @@ Swift 也提供了一个特殊的无符号类型UInt。
 > 尽量不要使用UInt，除非你真的需要存储一个和当前平台原生字长相同的无符号整数。除了这种情况，最好使用Int，即使你要存储的值已知是非负的。统一使用Int可以提高代码的可复用性，避免不同类型数字之间的转换，并且匹配数字的类型推断。
 
 
-### 布尔类型(Bool)
+#### 布尔类型(Bool)
 
 Swift 有一个基本的布尔（Boolean）类型，叫做Bool。布尔值指逻辑上的值，因为它们只能是真或者假。Swift 有两个布尔常量，true和false。
 
-### 字符和字符串类型(Character/String)
+#### 字符和字符串类型(Character/String)
 
 只包含一个字符的时候，我们也可以把它作为字符类型，Character 只是 String 的一种特殊情况，一般来说，我们都使用 String 就好了：
 
@@ -361,7 +362,7 @@ var ch: Character = "a"
 - 四字节Unicode字符，`\Unnnnnnnn`，其中nnnnnnnn是八个十六进制数
 
 
-### 数组和字典
+#### 数组和字典
 
 数组和字典是两种非常长常见的数据类型，在刚才介绍的类型中，一个量通常只能包含一个值。而数组这种类型，就可以容纳相同类型的的多个值；而字典这种类型，可以容纳多个对应关系（一个值唯一对应另一个值）
 
@@ -410,6 +411,44 @@ print(distance)
 // 100·
 ```
 
+### 类型安全
+
+Swift 是一个类型安全（type safe）的语言。由于 Swift 是类型安全的，所以它会在编译你的代码时进行类型检查（type checks），并把不匹配的类型标记为错误。这可以让你在开发的时候尽早发现并修复错误。[demo16.swift](examples/demo16.swift)
+
+```swift
+import Cocoa
+var A = 42
+A = "This is hello"
+print(A)
+```
+
+```
+$ swift examples/demo16.swift
+examples/demo16.swift:3:5: error: cannot assign value of type 'String' to type 'Int'
+A = "This is hello"
+    ^~~~~~~~~~~~~~~
+```
+
+### 类型推断
+
+如果你没有显式指定类型，Swift 会使用类型推断（type inference）来选择合适的类型。[demo17.swift](examples/demo17.swift)
+
+```swift
+// a 会被推测为 Int 类型
+let a = 42  
+
+// pi 会被推测为 Double 类型
+let pi = 3.14159
+
+// anotherPi 会被推测为 Double 类型
+// 原始值3没有显式声明类型，而表达式中出现了一个浮点字面量，
+// 所以表达式会被推断为Double类型。
+let anotherPi = 3 + 0.14159
+
+print(anotherPi)
+//上面输出 3.14159
+```
+
 ### 元组和集合
 
 元组不是一种类型，但是却是一种可以表示数据的结构。数组保存多个相同类型的值，而元组则可以保存多个不同类型的值，它的用法如下[demo15.swift](examples/demo15.swift)：
@@ -437,17 +476,26 @@ let arrays: Array<Int> = [1, 1, 1, 1]
 默认情况下，如果你不做显式声明，Swift 会默认将其推断为数组类型
 关于集合、数组、字典之间的关系，下面这张图很好的展示了这一切：
 
+## 可选和隐式可选类型
+
+- 类型后面用问号 `?` 表示可选类型；
+- 类型后面用感叹号 `!` 表示可选类型；
 
 ## 问题解决
 
 - [swift NameError: name 'run_one_line' is not defined](https://github.com/Homebrew/homebrew-core/issues/2712)
 
 
-- https://www.shiyanlou.com/courses/611/labs/2011/document
-- http://c.biancheng.net/cpp/html/2292.html
-- http://www.imooc.com/article- 
+## 参考教程
 
-- [Swifter.tips](http://swifter.tips)
+- [The Swift Programming Language 中文版](http://special.csdncms.csdn.net/the-swift-programming-language-in-chinese/Introduction.shtml)
+- [深入浅出 Swift 3](https://www.shiyanlou.com/courses/611)
+- [Swift教程](http://c.biancheng.net/cpp/swift/jiaocheng/)
+- [慕课网Swift教程](http://www.imooc.com/search/course?words=swift)
+
+---
+
+- [Swift 必备 tips](http://swifter.tips)
 - [Swift 学习指引](http://www.swiftguide.cn)
 - [swiftcafe](http://swiftcafe.io)
 - [SwiftGG](http://swift.gg)
