@@ -528,6 +528,29 @@ let arrays: Array<Int> = [1, 1, 1, 1]
 - 类型后面用问号 `?` 表示可选类型；
 - 类型后面用感叹号 `!` 表示隐式可选类型；
 
+### 可选类型
+
+当基础类型（整形、浮点、布尔等）没有值时，是不能使用的。Swift 为了表达这种状态，对类型提供了可选的概念。在某个类型后面添加 ? 可以表示一个可选类型，这个可选类型有两种状态：1. 有值；2. 没值
+
+```swift
+var optionalInteger: Int?
+optionalInteger = 404
+
+if optionalInteger != nil {   // 确定可选类型包含值后可以在变量名后加!强制解析
+    print(optionalInteger!)   // 404
+}
+
+var errorCode: Int? = 404  // 在类型后面添加一个?
+print(errorCode)           // Optional(404)  // 会打印警告
+errorCode = nil            // 对非可选类型赋值为nil会报错
+print(errorCode)           // nil            // 会打印警告
+
+// 确定可选类型包含值后可以在变量名后加!强制解析
+if errorCode != nil {
+    print(errorCode!)// 404
+}
+```
+
 ## 问题解决
 
 - [swift NameError: name 'run_one_line' is not defined](https://github.com/Homebrew/homebrew-core/issues/2712)
@@ -536,6 +559,9 @@ let arrays: Array<Int> = [1, 1, 1, 1]
 ## 参考教程
 
 - [The Swift Programming Language 中文版](http://special.csdncms.csdn.net/the-swift-programming-language-in-chinese/Introduction.shtml)
+- [官方文档The Swift Programming Language](https://swift.org/documentation/#the-swift-programming-language)
+- [官方文档的中文版The Swift Programming Language中文版](https://github.com/numbbbbb/the-swift-programming-language-in-chinese)
+- [Swift3.0语法速查手册](https://darielchen.github.io/SwiftManual/)
 - [深入浅出 Swift 3](https://www.shiyanlou.com/courses/611)
 - [Swift教程](http://c.biancheng.net/cpp/swift/jiaocheng/)
 - [慕课网Swift教程](http://www.imooc.com/search/course?words=swift)
