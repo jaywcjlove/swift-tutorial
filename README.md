@@ -2,7 +2,7 @@
 Swift入门教程、读书笔记
 ---
 
-# 目录
+<!-- TOC -->
 
 - [准备环境](#准备环境)
 - [swiftc命令](#swiftc命令)
@@ -12,8 +12,25 @@ Swift入门教程、读书笔记
 - [常量、变量](#常量变量)
 - [运算符](#运算符)
 - [数据类型](#数据类型)
-- [可选和隐式可选类型)](#可选和隐式可选类型)
+  - [数值类型](#数值类型)
+    - [整数类型](#整数类型)
+    - [浮点数](#浮点数)
+    - [无符号类型](#无符号类型)
+    - [布尔类型](#布尔类型)
+    - [字符和字符串类型](#字符和字符串类型)
+    - [数组和字典](#数组和字典)
+  - [数值范围](#数值范围)
+  - [类型别名](#类型别名)
+  - [类型安全](#类型安全)
+  - [类型推断](#类型推断)
+  - [元组和集合](#元组和集合)
+- [可选和隐式可选类型](#可选和隐式可选类型)
+  - [可选类型](#可选类型)
 - [问题解决](#问题解决)
+- [Web框架](#web框架)
+- [参考教程](#参考教程)
+
+<!-- /TOC -->
 
 ## 准备环境
 
@@ -312,7 +329,9 @@ print(name)
 
 Swift 提供了非常丰富的数据类型
 
-#### 整数类型(Int)
+#### 整数类型
+
+> (Int)
 
 一般来说，你不需要专门指定整数的长度。Swift 提供了一个特殊的整数类型Int，长度与当前平台的原生字长相同[demo13.swift](examples/demo13.swift)：
 
@@ -327,7 +346,7 @@ print(version)
 print(version2)
 ```
 
-#### 浮点数(Double)
+#### 浮点数
 
 - Double表示64位浮点数。当你需要存储很大或者很高精度的浮点数时请使用此类型。
 - Float表示32位浮点数。精度要求不高的话可以使用此类型。
@@ -335,7 +354,9 @@ print(version2)
 > 注意：
 > Double精确度很高，至少有15位数字，而Float最少只有6位数字。选择哪个类型取决于你的代码需要处理的值的范围。
 
-#### 无符号类型(UInt)
+#### 无符号类型
+
+> (UInt)
 
 Swift 也提供了一个特殊的无符号类型UInt。
 
@@ -343,11 +364,15 @@ Swift 也提供了一个特殊的无符号类型UInt。
 > 尽量不要使用UInt，除非你真的需要存储一个和当前平台原生字长相同的无符号整数。除了这种情况，最好使用Int，即使你要存储的值已知是非负的。统一使用Int可以提高代码的可复用性，避免不同类型数字之间的转换，并且匹配数字的类型推断。
 
 
-#### 布尔类型(Bool)
+#### 布尔类型
+
+> (Bool)
 
 Swift 有一个基本的布尔（Boolean）类型，叫做Bool。布尔值指逻辑上的值，因为它们只能是真或者假。Swift 有两个布尔常量，true和false。
 
-#### 字符和字符串类型(Character/String)
+#### 字符和字符串类型
+
+> (Character/String)
 
 只包含一个字符的时候，我们也可以把它作为字符类型，Character 只是 String 的一种特殊情况，一般来说，我们都使用 String 就好了[demo19.swift](examples/demo19.swift)：
 
@@ -555,6 +580,12 @@ if errorCode != nil {
 
 - [swift NameError: name 'run_one_line' is not defined](https://github.com/Homebrew/homebrew-core/issues/2712)
 
+## Web框架
+
+- [Vapor](https://github.com/vapor/vapor)
+- [Perfect](https://github.com/PerfectlySoft/Perfect)
+- [Kitura](https://github.com/IBM-Swift/Kitura)
+- [Zewo](https://github.com/Zewo/Zewo)
 
 ## 参考教程
 
@@ -565,9 +596,6 @@ if errorCode != nil {
 - [深入浅出 Swift 3](https://www.shiyanlou.com/courses/611)
 - [Swift教程](http://c.biancheng.net/cpp/swift/jiaocheng/)
 - [慕课网Swift教程](http://www.imooc.com/search/course?words=swift)
-
----
-
 - [Swift 必备 tips](http://swifter.tips)
 - [Swift 学习指引](http://www.swiftguide.cn)
 - [swiftcafe](http://swiftcafe.io)
