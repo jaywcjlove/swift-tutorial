@@ -21,6 +21,7 @@ Swift入门教程、读书笔记
 - [可选和隐式可选类型](#可选和隐式可选类型)
   - [可选类型](#可选类型)
 - [问题解决](#问题解决)
+- [工具](#工具)
 - [Web框架](#web框架)
 - [参考教程](#参考教程)
 
@@ -574,8 +575,14 @@ if errorCode != nil {
 
 - [swift NameError: name 'run_one_line' is not defined](https://github.com/Homebrew/homebrew-core/issues/2712)
 
+## 工具
+
+- [Carthage](https://github.com/Carthage/Carthage) 一个简单的，分散的Cocoa依赖管理器
+- [CocoaPods](https://github.com/CocoaPods/CocoaPods) Swift和Objective-C Cocoa项目的依赖管理器。
+
 ## Web框架
 
+- [apple/swift-nio](https://github.com/apple/swift-nio)
 - [Vapor](https://github.com/vapor/vapor)
 - [Perfect](https://github.com/PerfectlySoft/Perfect)
 - [Kitura](https://github.com/IBM-Swift/Kitura)
