@@ -2,8 +2,6 @@
 Swift入门教程、读书笔记
 ---
 
-<!-- TOC -->
-
 - [准备环境](#准备环境)
 - [swiftc命令](#swiftc命令)
 - [print](#print)
@@ -24,8 +22,6 @@ Swift入门教程、读书笔记
 - [工具](#工具)
 - [Web框架](#web框架)
 - [参考教程](#参考教程)
-
-<!-- /TOC -->
 
 ## 准备环境
 
@@ -587,6 +583,7 @@ if errorCode != nil {
 - [Perfect](https://github.com/PerfectlySoft/Perfect)
 - [Kitura](https://github.com/IBM-Swift/Kitura)
 - [Zewo](https://github.com/Zewo/Zewo)
+- [Smoke](https://github.com/amzn/smoke-framework)
 
 ## 参考教程
 
