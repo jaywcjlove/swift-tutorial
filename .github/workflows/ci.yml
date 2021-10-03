@@ -13,8 +13,8 @@ jobs:
         with:
           node-version: 14
 
-      - run: mkdir -p build build/example
-      - run: cp -rp example build/example
+      - run: mkdir -p build build/examples
+      - run: cp -rp examples build/examples
       - run: cp -rp img build/
       - run: npm i markdown-to-html-cli -g
       - run: markdown-to-html --output build/index.html
