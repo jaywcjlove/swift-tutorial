@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Swift 入门教程、读书笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta description="通过简单的例子，来快速入门 Swift 语言基础编程、语法等各种语言特性，主要面向新手级别的学习者。">
+    <meta keywords="swift,tutorial,swift-tutorial">
+    <style>.task-list-item { list-style-type: none;}.task-list-item label { font-weight: 400;}.task-list-item.enabled label { cursor: pointer;}.task-list-item+.task-list-item { margin-top: 3px;}.task-list-item .handle { display: none;}.task-list-item-checkbox { margin: 0 .2em .25em -1.6em; vertical-align: middle;}.wmde-markdown h1,.wmde-markdown h2,.wmde-markdown h3,.wmde-markdown h4,.wmde-markdown h5,.wmde-markdown h6 { font-weight: 600; line-height: 1.25; margin-bottom: 16px; margin-top: 24px;}.wmde-markdown h1 .anchor,.wmde-markdown h2 .anchor,.wmde-markdown h3 .anchor,.wmde-markdown h4 .anchor,.wmde-markdown h5 .anchor,.wmde-markdown h6 .anchor { float: left; padding-right: 4px; margin-left: -20px; line-height: 1;}.wmde-markdown h1 .octicon-link,.wmde-markdown h2 .octicon-link,.wmde-markdown h3 .octicon-link,.wmde-markdown h4 .octicon-link,.wmde-markdown h5 .octicon-link,.wmde-markdown h6 .octicon-link { visibility: hidden; vertical-align: middle;}.wmde-markdown h1:hover .octicon-link,.wmde-markdown h2:hover .octicon-link,.wmde-markdown h3:hover .octicon-link,.wmde-markdown h4:hover .octicon-link,.wmde-markdown h5:hover .octicon-link,.wmde-markdown h6:hover .octicon-link { visibility: visible;}.github-corner:hover .octo-arm { -webkit-animation: octocat-wave .56s ease-in-out; animation: octocat-wave .56s ease-in-out;}@-webkit-keyframes octocat-wave { 0%, to { -webkit-transform: rotate(0); transform: rotate(0); } 20%, 60% { -webkit-transform: rotate(-25deg); transform: rotate(-25deg); } 40%, 80% { -webkit-transform: rotate(10deg); transform: rotate(10deg); }}@keyframes octocat-wave { 0%, to { -webkit-transform: rotate(0); transform: rotate(0) } 20%, 60% { -webkit-transform: rotate(-25deg); transform: rotate(-25deg); } 40%, 80% { -webkit-transform: rotate(10deg); transform: rotate(10deg); }}.wmde-markdown { font-size: 16px; line-height: 1.5; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji; max-width: 1024px; margin: 28px auto 60px auto;}.wmde-markdown > :first-child { margin-top: 0 !important;}.wmde-markdown > :last-child { margin-bottom: 0 !important;}.wmde-markdown code[class*="language-"],.wmde-markdown pre[class*="language-"] { color: black; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; word-wrap: normal; -webkit-hyphens: none; hyphens: none;}.wmde-markdown pre code { background: none; overflow-wrap: normal; white-space: inherit; -moz-tab-size: 2; tab-size: 2; padding: 16px; font-size: 95%; line-height: 1.5; display: block; text-shadow: 0 1px #fff;}.wmde-markdown pre { margin-bottom: 18px; font-size: 85%; line-height: 1.45; position: relative; overflow-x: auto; background-color: #f6f8fa; border-radius: 3px;}.wmde-markdown code,.wmde-markdown tt { background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; font-size: 85%; margin: 0; padding: 0.2em 0.4em;}.wmde-markdown pre,.wmde-markdown code,.wmde-markdown tt { font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;}.wmde-markdown img { max-width: 100%;}.wmde-markdown input { vertical-align: middle; margin: 0 0.2em 0.25em -1.6em;}.wmde-markdown input + p { display: inline;}.wmde-markdown h1,.wmde-markdown h2 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em;}.wmde-markdown h1,.wmde-markdown h2,.wmde-markdown h3,.wmde-markdown h4,.wmde-markdown h5,.wmde-markdown h6 { font-weight: 600; line-height: 1.25; margin-bottom: 16px; margin-top: 24px;}.wmde-markdown h1 .anchor,.wmde-markdown h2 .anchor,.wmde-markdown h3 .anchor,.wmde-markdown h4 .anchor,.wmde-markdown h5 .anchor,.wmde-markdown h6 .anchor { float: left; padding-right: 4px; margin-left: -20px; line-height: 1;}.wmde-markdown h1 .octicon-link,.wmde-markdown h2 .octicon-link,.wmde-markdown h3 .octicon-link,.wmde-markdown h4 .octicon-link,.wmde-markdown h5 .octicon-link,.wmde-markdown h6 .octicon-link { visibility: hidden; vertical-align: middle;}.wmde-markdown h1:hover .octicon-link,.wmde-markdown h2:hover .octicon-link,.wmde-markdown h3:hover .octicon-link,.wmde-markdown h4:hover .octicon-link,.wmde-markdown h5:hover .octicon-link,.wmde-markdown h6:hover .octicon-link { visibility: visible;}.wmde-markdown h1 { font-size: 2em;}.wmde-markdown h2 { font-size: 1.5em;}.wmde-markdown h3 { font-size: 1.25em;}.wmde-markdown h4 { font-size: 1em;}.wmde-markdown h5 { font-size: 0.875em;}.wmde-markdown h6 { font-size: 0.85em;}.wmde-markdown ol,.wmde-markdown ul { padding-left: 2em;}.wmde-markdown ol > p,.wmde-markdown ul > p { margin-bottom: 0;}.wmde-markdown ul { margin-bottom: 16px; margin-top: 0; list-style: initial;}.wmde-markdown > blockquote,.wmde-markdown > blockquote blockquote { margin: 0; border-left: 0.25em solid #dfe2e5; color: #6a737d; padding: 0 1em;}.wmde-markdown > blockquote > :last-child,.wmde-markdown > blockquote blockquote > :last-child { margin-bottom: 0;}.wmde-markdown > blockquote > :first-child,.wmde-markdown > blockquote blockquote > :first-child { margin-top: 0;}.wmde-markdown hr { margin: 1.5em auto; border: 0; border-top: 2px dotted #eee; height: 1px;}.wmde-markdown > table,.wmde-markdown > blockquote table { display: block; overflow: auto; width: 100%; border-collapse: collapse; border-spacing: 0; font-size: 14px;}.wmde-markdown > table tr,.wmde-markdown > blockquote table tr { background-color: #fff; border-top: 1px solid #c6cbd1;}.wmde-markdown > table td,.wmde-markdown > blockquote table td,.wmde-markdown > table th,.wmde-markdown > blockquote table th { border: 1px solid #dfe2e5; padding: 6px 13px;}.wmde-markdown blockquote,.wmde-markdown details,.wmde-markdown dl,.wmde-markdown ol,.wmde-markdown p,.wmde-markdown pre,.wmde-markdown table,.wmde-markdown ul { margin-bottom: 16px; margin-top: 0;}.wmde-markdown a { color: #0366d6; text-decoration: none;}.wmde-markdown a:hover { text-decoration: underline;}.wmde-markdown .namespace { opacity: 0.7;}.wmde-markdown .token.important { font-weight: normal;}.wmde-markdown .token.bold { font-weight: bold;}.wmde-markdown .token.italic { font-style: italic;}.wmde-markdown .token.entity { cursor: help;}.wmde-markdown kbd { background-color: #fafbfc; border-bottom-color: #d1d5da; border: 1px solid #d1d5da; border-radius: 3px; box-shadow: inset 0 -1px 0 #d1d5da; color: #56595d; display: inline-block; font-size: 10px; font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace; line-height: 10px; padding: 2px 4px; vertical-align: middle;}.wmde-markdown .token.tag .attr-value { color: #032f62;}.wmde-markdown .token.property,.wmde-markdown .token.tag,.wmde-markdown .token.boolean,.wmde-markdown .token.number,.wmde-markdown .token.function-name,.wmde-markdown .token.constant,.wmde-markdown .token.symbol,.wmde-markdown .token.deleted { color: #0060c9;}.wmde-markdown .token.punctuation { color: #a0a0a0;}.wmde-markdown code[class*="language-"] { color: black;}.wmde-markdown code[class*="language-"] .token.selector,.wmde-markdown code[class*="language-"] .token.attr-name,.wmde-markdown code[class*="language-"] .token.string,.wmde-markdown code[class*="language-"] .token.char,.wmde-markdown code[class*="language-"] .token.function,.wmde-markdown code[class*="language-"] .token.builtin { color: #6f42c1;}.wmde-markdown code[class*="language-"] .token.inserted { color: #22863a; background-color: #f0fff4;}.wmde-markdown code[class*="language-"] .token.deleted { color: #b31d28; background-color: #ffeef0;}.wmde-markdown code[class*="language-"] .token.class-name { color: #6f42c1;}.wmde-markdown code[class*="language-"] .code-block { color: #032f62;}.wmde-markdown code[class*="language-"] .token.comment,.wmde-markdown code[class*="language-"] .token.block-comment,.wmde-markdown code[class*="language-"] .token.prolog,.wmde-markdown code[class*="language-"] .token.doctype,.wmde-markdown code[class*="language-"] .token.cdata { color: #7D8B99;}.wmde-markdown code[class*="language-"] .token.punctuation { color: #a0a0a0;}.wmde-markdown code[class*="language-"] .token.operator,.wmde-markdown code[class*="language-"] .token.entity,.wmde-markdown code[class*="language-"] .token.url,.wmde-markdown code[class*="language-"] .token.variable { color: #d73a49; background: rgba(255, 255, 255, 0.5);}.wmde-markdown code[class*="language-"] .token.atrule,.wmde-markdown code[class*="language-"] .token.attr-value { color: #004698;}.wmde-markdown code[class*="language-"] .token.keyword { color: #d63200;}.wmde-markdown code[class*="language-"] .token.regex,.wmde-markdown code[class*="language-"] .token.important { color: #e90;}.wmde-markdown code[class*="language-"] .token.string { color: #0a53c1;}</style>
+    <style></style>
+  </head>
+  <body><div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/swift-tutorial"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path><path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path></svg></a>
+    <h2 id="swift入门教程读书笔记"><a class="anchor" aria-hidden="true" tabindex="-1" href="#swift入门教程读书笔记"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Swift入门教程、读书笔记</h2>
+    <p>如果你已经掌握了一些 Swift 语法基础了，可以通过 <a href="https://github.com/jaywcjlove/swiftui-example">SwiftUI Example</a> 来练习一些示例进行技术的提升。</p>
+    <h2 id="示例目录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#示例目录"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>示例目录</h2>
+    <ul>
+      <li><a href="#%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83">准备环境</a></li>
+      <li><a href="#swiftc%E5%91%BD%E4%BB%A4">swiftc命令</a></li>
+      <li><a href="#print">print</a></li>
+      <li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5">字符串拼接</a></li>
+      <li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
+      <li><a href="#%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F">常量、变量</a></li>
+      <li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6">运算符</a></li>
+      <li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a>
+        <ul>
+          <li><a href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B">数值类型</a></li>
+          <li><a href="#%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4">数值范围</a></li>
+          <li><a href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D">类型别名</a></li>
+          <li><a href="#%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8">类型安全</a></li>
+          <li><a href="#%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD">类型推断</a></li>
+          <li><a href="#%E5%85%83%E7%BB%84%E5%92%8C%E9%9B%86%E5%90%88">元组和集合</a></li>
+        </ul>
+      </li>
+      <li><a href="#%E5%8F%AF%E9%80%89%E5%92%8C%E9%9A%90%E5%BC%8F%E5%8F%AF%E9%80%89%E7%B1%BB%E5%9E%8B">可选和隐式可选类型</a>
+        <ul>
+          <li><a href="#%E5%8F%AF%E9%80%89%E7%B1%BB%E5%9E%8B">可选类型</a></li>
+        </ul>
+      </li>
+      <li><a href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">问题解决</a></li>
+      <li><a href="#%E5%B7%A5%E5%85%B7">工具</a></li>
+      <li><a href="#web%E6%A1%86%E6%9E%B6">Web框架</a></li>
+      <li><a href="#%E5%8F%82%E8%80%83%E6%95%99%E7%A8%8B">参考教程</a></li>
+    </ul>
+    <h2 id="准备环境"><a class="anchor" aria-hidden="true" tabindex="-1" href="#准备环境"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>准备环境</h2>
+    <p>在 Mac 上学习 Swift 非常简单，你只需在 App Store 中安装 <a href="https://itunes.apple.com/cn/app/xcode/id497799835">Xcode</a> 即可。接下来，你有两种方法来学习 Swift 基础语法。</p>
+    <p><strong>方法一：通过命令行</strong></p>
+    <p>你只需打开 Terminal 运行 swift 命令即可：</p>
+    <pre><code>$ swift
+Welcome to Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1). Type :help for assistance.
+  1> var str = "Hello Siwft!"
+str: String = "Hello Siwft!"
+  2>:q   //:q是推出命令
+</code></pre>
+    <p>运行 Swift 文件，在学习过程中，可以把一些存成 .swift 后缀的文件，通过 <code>swift filename.swift</code> 命令运行它输出结果。</p>
+    <p><strong>方法二：通过Xcode运行</strong></p>
+    <p>打开 Xcode 软件，可以看到一个Xcode的欢迎界面，如果欢迎界面没有出来，你可以使用快捷键唤出 <code>⇧+⌘+1</code>(shift+command+1)，在欢迎界面上可以看到 <strong>Get started with a playground</strong> 菜单，点击它建立一个 playground 的文件。我们可以在上面写代码，实时运行 swift 代码打印出运行结果。</p>
+    <h2 id="swiftc命令"><a class="anchor" aria-hidden="true" tabindex="-1" href="#swiftc命令"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>swiftc命令</h2>
+    <p>上面通过swift运行程序，同时我们可以通过swiftc编译命令，编译成一个可执行的文件，直接运行可执行文件，遐想一下，感觉我们用swift可以干好多活儿。下面来运行一个 Hello World。</p>
+    <p>我们使用函数 print 来输出一个 Hello World 字符串。建立一个 <a href="examples/demo1.swift">demo1.swift</a> 输入下面代码，放到了 examples 目录中：</p>
+    <pre><code>print("Hello world!")
+</code></pre>
+    <p>将 examples 目录中的 <a href="examples/demo1.swift">demo1.swift</a> 文件，编译出的可执行文件输出到 examples 目录中 文件名为 demo</p>
+    <pre><code>swiftc examples/demo1.swift -o examples/demo
+</code></pre>
+    <p>通过 swift 运行 demo 并输出 Hello world!。</p>
+    <pre><code>./examples/demo
+</code></pre>
+    <h2 id="print"><a class="anchor" aria-hidden="true" tabindex="-1" href="#print"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>print</h2>
+    <p>它是一个输出函数，在 <a href="examples/demo1.swift">demo1.swift</a> 中我们使用过这个函数，现在建立 <a href="examples/demo1.swift">demo1.swift</a> 文件，通过print函数输出多个值，使用 print的参数separator将分隔符自定义一下。例如：</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> year <span class="token operator">=</span> <span class="token number">1987</span>
+<span class="token keyword">var</span> month <span class="token operator">=</span> <span class="token number">11</span>
+<span class="token keyword">var</span> day <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token function">print</span><span class="token punctuation">(</span>year<span class="token punctuation">,</span>month<span class="token punctuation">,</span>day<span class="token punctuation">,</span>separator<span class="token punctuation">:</span><span class="token string">"-"</span><span class="token punctuation">)</span>
+</code></pre>
+    <p>运行测试它，我们将看到输出结果：</p>
+    <pre><code>$ swift examples/demo2.swift
+1987-11-3
+</code></pre>
+    <h2 id="字符串拼接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#字符串拼接"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>字符串拼接</h2>
+    <p>特别注意，在变量上面可以使用<code>+</code>来拼接字符串，常量拼接字符串会报错，常量和变量拼接同样报错。<a href="examples/demo12.swift">demo12.swift</a></p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> version <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token keyword">let</span> tutorial <span class="token operator">=</span> <span class="token string">"Swift <span class="token interpolation"><span class="token delimiter variable">\(</span>version<span class="token delimiter variable">)</span></span> tutorial"</span>
+<span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token string">"Hello <span class="token interpolation"><span class="token delimiter variable">\(</span>tutorial<span class="token delimiter variable">)</span></span>!"</span>
+<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"Hello !"</span> <span class="token operator">+</span> <span class="token string">"sdsd"</span>
+<span class="token function">print</span><span class="token punctuation">(</span>tutorial<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+</code></pre>
+    <h2 id="注释"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注释"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>注释</h2>
+    <p>Swift注释与JS注释一样。</p>
+    <p>段落注释</p>
+    <pre><code>/*
+ 这里是段落注释
+ */
+</code></pre>
+    <p>单行注释</p>
+    <pre><code>// 这里是单行注释
+</code></pre>
+    <h2 id="常量变量"><a class="anchor" aria-hidden="true" tabindex="-1" href="#常量变量"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>常量、变量</h2>
+    <ul>
+      <li>let常量，不能更改的值（immutable）</li>
+      <li>var变量，可以更改的值（mutable）</li>
+    </ul>
+    <p>声明一个名字叫做 constNumber 的常量，并给它一个值 1987 ，声明一个名字叫做 variableNumber 的变量，并给它一个值为 13，分别输出 constNumber 和 variableNumber 的值，将它保存到 <a href="examples/demo3.swift">demo3.swift</a> 中：</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> constNumber <span class="token operator">=</span> <span class="token number">1987</span>
+<span class="token keyword">var</span> variableNumber <span class="token operator">=</span> <span class="token number">13</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>constNumber<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>variableNumber<span class="token punctuation">)</span>
+</code></pre>
+    <p>运行测试它，我们将看到输出结果：</p>
+    <pre><code>$ swift examples/demo3.swift
+1987
+13
+</code></pre>
+    <p>通过上面的例子，我们来测试一下常量和变量的特性，下面代码保存到 <a href="examples/demo4.swift">demo4.swift</a> 文件中</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> constNumber <span class="token operator">=</span> <span class="token number">1987</span>
+<span class="token keyword">var</span> variableNumber <span class="token operator">=</span> <span class="token number">13</span>
+constNumber <span class="token operator">=</span> variableNumber <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token function">print</span><span class="token punctuation">(</span>constNumber<span class="token punctuation">)</span>
+</code></pre>
+    <p>上面这个错误的例子是，将变量 variableNumber 加 1 赋值给常量 constNumber。这是一个错误的演示，它运行会曝出错误信息，如果你使用 Xcode 将自动有个错误提示，你只需直接点击错误信息就可以自动修改错误，好智能的功能哦。</p>
+    <pre><code>$ swift examples/demo4.swift
+examples/demo4.swift:4:13: error: cannot assign to value: 'constNumber' is a 'let' constant
+constNumber = variableNumber + 1
+~~~~~~~~~~~ ^
+examples/demo4.swift:1:1: note: change 'let' to 'var' to make it mutable
+let constNumber = 1987
+^~~
+var
+</code></pre>
+    <h2 id="运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#运算符"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>运算符</h2>
+    <p>用来做运算的，上面例子已经使用了运算符 <code>-</code>，其实就是跟数学运算是一样的</p>
+    <ul>
+      <li>加<code>+</code></li>
+      <li>减<code>-</code></li>
+      <li>乘<code>*</code></li>
+      <li>除<code>/</code></li>
+      <li>求余<code>%</code></li>
+      <li>相等<code>==</code></li>
+      <li>不等于<code>a != b</code></li>
+      <li>大于<code>a > b</code></li>
+      <li>小于<code>a &#x3C; b</code></li>
+      <li>大于等于<code>a >= b</code></li>
+      <li>小于等于<code>a &#x3C;= b</code></li>
+    </ul>
+    <p><strong>赋值运算符</strong> <a href="examples/demo5.swift">demo5.swift</a></p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> constNumber <span class="token operator">=</span> <span class="token number">1987</span>              <span class="token comment">// 声明常量 constNumber 值为 1987</span>
+<span class="token keyword">var</span> variableNumber <span class="token operator">=</span> <span class="token number">13</span>             <span class="token comment">// 声明变量 variableNumber 值为 13</span>
+variableNumber <span class="token operator">=</span> constNumber <span class="token operator">-</span> <span class="token number">1</span>    <span class="token comment">// 这里赋值，常量 constNumber 减 1 赋值给变量 variableNumber</span>
+<span class="token function">print</span><span class="token punctuation">(</span>variableNumber<span class="token punctuation">)</span>               <span class="token comment">// 将 variableNumber 最终的值输出</span>
+</code></pre>
+    <p>运行结果</p>
+    <pre><code>$ swift examples/demo5.swift
+1986
+</code></pre>
+    <p><strong>算数运算符</strong> <a href="examples/demo6.swift">demo6.swift</a></p>
+    <p>算数运算符也就是我们常见到的数学运算了，加<code>+</code>、 减<code>-</code>、 乘<code>*</code>、 除<code>/</code>、 求余<code>%</code>。</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">)</span>           <span class="token comment">//  输出 6</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token number">15</span> <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">)</span>              <span class="token comment">//  输出 12</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token number">23</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span>              <span class="token comment">//  输出 69</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token number">100.0</span> <span class="token operator">/</span> <span class="token number">2.5</span><span class="token punctuation">)</span>         <span class="token comment">//  输出 40.0</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token number">90</span> <span class="token operator">%</span> <span class="token number">4</span><span class="token punctuation">)</span>              <span class="token comment">//  输出 2</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> <span class="token string">"Swift!"</span><span class="token punctuation">)</span> <span class="token comment">//  输出 Hello Swift!</span>
+</code></pre>
+    <p>运行结果</p>
+    <pre><code>$ swift examples/demo6.swift
+6
+12
+69
+40.0
+2
+Hello Swift!
+</code></pre>
+    <p><strong>组合赋值运算符</strong></p>
+    <p>比如下面这样的代码，我们完全可以使用组合赋值运算符简写。</p>
+    <pre><code>var variableNumber = 13
+
+// 这句是可以使用组合赋值运算符简写
+variableNumber = variableNumber + 1
+
+// 简写
+variableNumber += 1
+</code></pre>
+    <p>来个各种合赋值运算符例子 <a href="examples/demo7.swift">demo7.swift</a></p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> example <span class="token operator">=</span> <span class="token number">13</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"输出结果："</span><span class="token punctuation">,</span>example<span class="token punctuation">)</span>
+example <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"输出结果："</span><span class="token punctuation">,</span>example<span class="token punctuation">)</span>
+example <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">1</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"输出结果："</span><span class="token punctuation">,</span>example<span class="token punctuation">)</span>
+example <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">2</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"输出结果："</span><span class="token punctuation">,</span>example<span class="token punctuation">)</span>
+example <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">1</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"输出结果："</span><span class="token punctuation">,</span>example<span class="token punctuation">)</span>
+example <span class="token operator">%</span><span class="token operator">=</span> <span class="token number">1</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"输出结果："</span><span class="token punctuation">,</span>example<span class="token punctuation">)</span>
+</code></pre>
+    <p><strong>比较运算符</strong></p>
+    <p>可以通过 相等<code>==</code>、 不等于<code>a != b</code>、 大于<code>a > b</code>、 小于<code>a &#x3C; b</code>、 大于等于<code>a >= b</code>、 小于等于<code>a &#x3C;= b</code>进行比较运算。</p>
+    <p>例如：<code>print(12 != 1)</code> 将会返回一个布尔值 ture</p>
+    <p><strong>三目运算符</strong><a href="examples/demo8.swift">demo8.swift</a></p>
+    <p>三目运算符也就是三元运算符 <code>判断条件 ? 答案 1 : 答案 2</code></p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">86</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> a <span class="token operator">!=</span> <span class="token number">86</span> <span class="token operator">?</span> <span class="token string">"歪果仁"</span> <span class="token punctuation">:</span> <span class="token string">"中国人"</span>
+<span class="token function">print</span><span class="token punctuation">(</span> b <span class="token punctuation">)</span>
+</code></pre>
+    <p><strong>区间运算符</strong></p>
+    <ul>
+      <li>闭区间运算符（<code>a...b</code>）定义一个包含从 a 到 b（包括 a 和 b）的所有值的区间。a 的值不能超过 b。</li>
+      <li>半开区间（<code>a..&#x3C;b</code>）定义一个从 a 到 b 但不包括 b 的区间。之所以称为半开区间，是因为该区间包含第一个值而不包括最后的值。</li>
+    </ul>
+    <pre class="language-swift"><code class="language-swift"><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">5</span>
+<span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&#x3C;</span><span class="token number">5</span>
+<span class="token comment">// 分别表示 1 到 5 和 1 到 4。</span>
+</code></pre>
+    <p>关于它的使用，可以配合 for-in 语句，看到下面代码对于 <code>...</code> 和 <code>..&#x3C;</code> 之间的不同<a href="examples/demo9.swift">demo9.swift</a>：</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"将输出 1 到 5"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">5</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"只输出 1 到 4"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&#x3C;</span><span class="token number">5</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    <p><strong>逻辑运算符</strong><a href="examples/demo10.swift">demo10.swift</a></p>
+    <p>三个标准的逻辑运算，非<code>!</code>、与<code>&#x26;&#x26;</code>、或<code>||</code></p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token operator">!</span>a<span class="token punctuation">)</span>           <span class="token comment">// 输出 false</span>
+<span class="token function">print</span><span class="token punctuation">(</span>a <span class="token operator">&#x26;&#x26;</span> b<span class="token punctuation">)</span>       <span class="token comment">// 输出 false</span>
+<span class="token function">print</span><span class="token punctuation">(</span>a <span class="token operator">||</span> b<span class="token punctuation">)</span>       <span class="token comment">// 输出 true</span>
+</code></pre>
+    <h2 id="数据类型"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数据类型"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>数据类型</h2>
+    <p>在前面的例子中使用了<code>let</code> 和 <code>var</code> 声明常量和变量，并给这个常量或者变量赋值，Swift 默认情况直接根据后面的赋值，来确定这个变量或者常量的类型，这个是Swift的一个简写方式。那么完整的一个声明变量或常量，是下面的样子<a href="examples/demo11.swift">demo11.swift</a></p>
+    <pre><code>let constNumber: Int = 1987
+var name : String = "我是调调！"
+
+print(constNumber)
+print(name)
+</code></pre>
+    <h3 id="数值类型"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数值类型"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>数值类型</h3>
+    <p>Swift 提供了非常丰富的数据类型</p>
+    <p><strong>整数类型</strong></p>
+    <blockquote>
+      <p>(Int)</p>
+    </blockquote>
+    <p>一般来说，你不需要专门指定整数的长度。Swift 提供了一个特殊的整数类型Int，长度与当前平台的原生字长相同<a href="examples/demo13.swift">demo13.swift</a>：</p>
+    <ul>
+      <li>在32位平台上，Int和Int32长度相同。</li>
+      <li>在64位平台上，Int和Int64长度相同。</li>
+    </ul>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> version <span class="token punctuation">:</span><span class="token builtin">Int32</span> <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token keyword">var</span> version2 <span class="token punctuation">:</span><span class="token builtin">Int64</span> <span class="token operator">=</span> <span class="token number">30</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>version<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>version2<span class="token punctuation">)</span>
+</code></pre>
+    <p><strong>浮点数</strong></p>
+    <ul>
+      <li>Double表示64位浮点数。当你需要存储很大或者很高精度的浮点数时请使用此类型。</li>
+      <li>Float表示32位浮点数。精度要求不高的话可以使用此类型。</li>
+    </ul>
+    <blockquote>
+      <p>
+        注意：
+        Double精确度很高，至少有15位数字，而Float最少只有6位数字。选择哪个类型取决于你的代码需要处理的值的范围。
+      </p>
+    </blockquote>
+    <p><strong>无符号类型</strong></p>
+    <blockquote>
+      <p>(UInt)</p>
+    </blockquote>
+    <p>Swift 也提供了一个特殊的无符号类型UInt。</p>
+    <blockquote>
+      <p>
+        注意：
+        尽量不要使用UInt，除非你真的需要存储一个和当前平台原生字长相同的无符号整数。除了这种情况，最好使用Int，即使你要存储的值已知是非负的。统一使用Int可以提高代码的可复用性，避免不同类型数字之间的转换，并且匹配数字的类型推断。
+      </p>
+    </blockquote>
+    <p><strong>布尔类型</strong></p>
+    <blockquote>
+      <p>(Bool)</p>
+    </blockquote>
+    <p>Swift 有一个基本的布尔（Boolean）类型，叫做Bool。布尔值指逻辑上的值，因为它们只能是真或者假。Swift 有两个布尔常量，true和false。</p>
+    <p><strong>字符和字符串类型</strong></p>
+    <blockquote>
+      <p>(Character/String)</p>
+    </blockquote>
+    <p>只包含一个字符的时候，我们也可以把它作为字符类型，Character 只是 String 的一种特殊情况，一般来说，我们都使用 String 就好了<a href="examples/demo19.swift">demo19.swift</a>：</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> ch<span class="token punctuation">:</span> <span class="token builtin">Character</span> <span class="token operator">=</span> <span class="token string">"a"</span>
+<span class="token keyword">var</span> emptyString <span class="token operator">=</span> <span class="token string">""</span>               <span class="token comment">// 空字符串字面量</span>
+<span class="token keyword">var</span> anotherEmptyString <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 初始化 String 实例</span>
+<span class="token comment">// 两个字符串均为空并等价。</span>
+<span class="token comment">// 通过检查其Boolean类型的isEmpty属性来判断该字符串是否为空</span>
+<span class="token keyword">if</span> emptyString<span class="token punctuation">.</span><span class="token builtin">isEmpty</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"什么都没有"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 打印输出："什么都没有"</span>
+<span class="token keyword">let</span> unusualMenagerie <span class="token operator">=</span> <span class="token string">"Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪"</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"unusualMenagerie has <span class="token interpolation"><span class="token delimiter variable">\(</span>unusualMenagerie<span class="token punctuation">.</span>characters<span class="token punctuation">.</span><span class="token builtin">count</span><span class="token delimiter variable">)</span></span> characters"</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印输出："unusualMenagerie has 40 characters"</span>
+
+<span class="token comment">// +相加在一起（或称“串联”)</span>
+<span class="token keyword">var</span> str1 <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str2 <span class="token operator">=</span> <span class="token string">" there"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> str1 <span class="token operator">+</span> str2<span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// welcome 现在等于 "hello there"</span>
+
+<span class="token keyword">let</span> normal <span class="token operator">=</span> <span class="token string">"Could you help me, please?"</span>
+<span class="token comment">// 转化大写</span>
+<span class="token keyword">let</span> shouty <span class="token operator">=</span> normal<span class="token punctuation">.</span>uppercaseString
+<span class="token comment">// shouty 值为 "COULD YOU HELP ME, PLEASE?"</span>
+<span class="token comment">// 转化小写</span>
+<span class="token keyword">let</span> whispered <span class="token operator">=</span> normal<span class="token punctuation">.</span>lowercaseString
+<span class="token comment">// whispered 值为 "could you help me, please?"</span>
+</code></pre>
+    <ul>
+      <li>一个字符串中并不一定占用相同的内存空间</li>
+    </ul>
+    <p>字符串常量可以包括下面这些特殊字符：</p>
+    <ul>
+      <li>空字符<code>\0</code>，反斜杠<code>\</code>，制表符<code>\t</code>，换行符<code>\n</code>，回车符<code>\r</code>，双引号<code>\"</code>和单引号<code>\'</code></li>
+      <li>单字节Unicode字符，<code>\xnn</code>，其中nn是两个十六进制数</li>
+      <li>双字节Unicode字符，<code>\unnnn</code>，其中nnnn是四个十六进制数</li>
+      <li>四字节Unicode字符，<code>\Unnnnnnnn</code>，其中nnnnnnnn是八个十六进制数</li>
+    </ul>
+    <p><strong>数组和字典</strong></p>
+    <p>数组和字典是两种非常长常见的数据类型，在刚才介绍的类型中，一个量通常只能包含一个值。而数组这种类型，就可以容纳相同类型的的多个值；而字典这种类型，可以容纳多个对应关系（一个值唯一对应另一个值）</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> stringArray<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"This"</span><span class="token punctuation">,</span> <span class="token string">"is"</span><span class="token punctuation">,</span> <span class="token string">"github"</span><span class="token punctuation">]</span>
+
+<span class="token comment">// 并通过下面的方式可以访问数组和字典中的值</span>
+<span class="token function">print</span><span class="token punctuation">(</span>stringArray<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment">// 访问第0个值, 数组的元素是从0开始记的</span>
+</code></pre>
+    <h3 id="数值范围"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数值范围"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>数值范围</h3>
+    <p>下表显示了不同变量类型内存的存储空间，及变量类型的最大最小值：</p>
+    <table>
+      <thead>
+        <tr>
+          <th>类型</th>
+          <th>大小（字节）</th>
+          <th>区间值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Int8</td>
+          <td>1 字节</td>
+          <td>-127 到 127</td>
+        </tr>
+        <tr>
+          <td>UInt8</td>
+          <td>1 字节</td>
+          <td>0 到 255</td>
+        </tr>
+        <tr>
+          <td>Int32</td>
+          <td>4 字节</td>
+          <td>-2147483648 到 2147483647</td>
+        </tr>
+        <tr>
+          <td>UInt32</td>
+          <td>4 字节</td>
+          <td>0 到 4294967295</td>
+        </tr>
+        <tr>
+          <td>Int64</td>
+          <td>8 字节</td>
+          <td>-9223372036854775808 到 9223372036854775807</td>
+        </tr>
+        <tr>
+          <td>UInt64</td>
+          <td>8 字节</td>
+          <td>0 到 18446744073709551615</td>
+        </tr>
+        <tr>
+          <td>Float</td>
+          <td>4 字节</td>
+          <td>1.2E-38 到 3.4E+38 (~6 digits)</td>
+        </tr>
+        <tr>
+          <td>Double</td>
+          <td>8 字节</td>
+          <td>2.3E-308 到 1.7E+308 (~15 digits)</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="类型别名"><a class="anchor" aria-hidden="true" tabindex="-1" href="#类型别名"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>类型别名</h3>
+    <p>类型别名对当前的类型定义了另一个名字，类型别名通过使用 typealias 关键字来定义。语法格式如下：</p>
+    <blockquote>
+      <p>typealias 类型名字 = type</p>
+    </blockquote>
+    <pre class="language-swift"><code class="language-swift"><span class="token comment">// 例如以下定义了 Int 的类型别名为 Feet：</span>
+<span class="token keyword">typealias</span> <span class="token builtin">Feet</span> <span class="token operator">=</span> <span class="token builtin">Int</span>
+
+<span class="token comment">// 由于前面已经定义了类型别名，那么这里使用Feet也相当于使用Int</span>
+<span class="token comment">// 所以AudioSample.min = Int.min,也就是0.  </span>
+<span class="token keyword">var</span> maxAmplitudeFound <span class="token operator">=</span> <span class="token builtin">Feet</span><span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">;</span>
+<span class="token comment">// 几面输出 maxAmplitudeFound: Int = -9223372036854775808</span>
+
+<span class="token comment">// 现在，我们可以通过别名来定义变量：</span>
+<span class="token keyword">typealias</span><span class="token punctuation">:</span><span class="token builtin">Feet</span> <span class="token operator">=</span> <span class="token builtin">Intvar</span> 
+<span class="token builtin">distance</span><span class="token punctuation">:</span> <span class="token builtin">Feet</span> <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token builtin">distance</span><span class="token punctuation">)</span>
+<span class="token comment">// 我们使用 playground 执行以上程序，输出结果为：</span>
+<span class="token comment">// 100·</span>
+</code></pre>
+    <h3 id="类型安全"><a class="anchor" aria-hidden="true" tabindex="-1" href="#类型安全"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>类型安全</h3>
+    <p>Swift 是一个类型安全（type safe）的语言。由于 Swift 是类型安全的，所以它会在编译你的代码时进行类型检查（type checks），并把不匹配的类型标记为错误。这可以让你在开发的时候尽早发现并修复错误。<a href="examples/demo16.swift">demo16.swift</a></p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">import</span> <span class="token builtin">Cocoa</span>
+<span class="token keyword">var</span> A <span class="token operator">=</span> <span class="token number">42</span>
+A <span class="token operator">=</span> <span class="token string">"This is hello"</span>
+<span class="token function">print</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+</code></pre>
+    <pre><code>$ swift examples/demo16.swift
+examples/demo16.swift:3:5: error: cannot assign value of type 'String' to type 'Int'
+A = "This is hello"
+    ^~~~~~~~~~~~~~~
+</code></pre>
+    <h3 id="类型推断"><a class="anchor" aria-hidden="true" tabindex="-1" href="#类型推断"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>类型推断</h3>
+    <p>如果你没有显式指定类型，Swift 会使用类型推断（type inference）来选择合适的类型。<a href="examples/demo17.swift">demo17.swift</a></p>
+    <pre class="language-swift"><code class="language-swift"><span class="token comment">// a 会被推测为 Int 类型</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">42</span>  
+
+<span class="token comment">// pi 会被推测为 Double 类型</span>
+<span class="token keyword">let</span> pi <span class="token operator">=</span> <span class="token number">3.14159</span>
+
+<span class="token comment">// anotherPi 会被推测为 Double 类型</span>
+<span class="token comment">// 原始值3没有显式声明类型，而表达式中出现了一个浮点字面量，</span>
+<span class="token comment">// 所以表达式会被推断为Double类型。</span>
+<span class="token keyword">let</span> anotherPi <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">0.14159</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>anotherPi<span class="token punctuation">)</span>
+<span class="token comment">//上面输出 3.14159</span>
+</code></pre>
+    <h3 id="元组和集合"><a class="anchor" aria-hidden="true" tabindex="-1" href="#元组和集合"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>元组和集合</h3>
+    <p>元组不是一种类型，但是却是一种可以表示数据的结构。数组保存多个相同类型的值，而元组则可以保存多个不同类型的值，它的用法如下<a href="examples/demo15.swift">demo15.swift</a>：</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> awesome <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"Swift"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"awesome."</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">=</span> awesome
+<span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>    <span class="token comment">// 输出 Swift</span>
+<span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>    <span class="token comment">// 输出 3</span>
+<span class="token function">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>    <span class="token comment">// 输出 awesome.</span>
+
+<span class="token comment">// 和数组、字典不同的是，你不能通过[] 的方式来访问元组中的内容，但你可以像这样</span>
+<span class="token function">print</span><span class="token punctuation">(</span>awesome<span class="token punctuation">.</span><span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
+    <p>集合的声明和数组非常类似，都是通过 [] 进行，不同的地方在于集合只能容纳不同的值，而数组可以容纳相同的值：</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> sets<span class="token punctuation">:</span> <span class="token builtin">Set</span><span class="token operator">&#x3C;</span><span class="token builtin">Int</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> arrays<span class="token punctuation">:</span> <span class="token builtin">Array</span><span class="token operator">&#x3C;</span><span class="token builtin">Int</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+</code></pre>
+    <p>上面定义了 sets 是一个 Set 集合类型，容纳的是 Int 类型的值，数组同理</p>
+    <p>
+      默认情况下，如果你不做显式声明，Swift 会默认将其推断为数组类型
+      关于集合、数组、字典之间的关系，下面这张图很好的展示了这一切：<a href="http://asciiflow.com/">画图工具</a>
+    </p>
+    <pre class="language-bash"><code class="language-bash">      Array           Set                   Dictionary
+┏--------------┓ ┏---------------┓ ┏-------------------------┓
+┆ Index Value  ¦ ¦     Value     ¦ ¦  Keys          Values   ¦
+¦ ┌---┬------┐ ¦ ¦               ¦ ¦ ┌----┐        ┌-------┐ ¦
+¦ ¦0  ¦Six   ¦ ¦ ¦ ┌----┐        ¦ ¦ ¦YYZ ├-------▷¦Toronto¦ ¦
+¦ ├---┼------┤ ¦ ¦ ¦Rock¦ ┌----┐ ¦ ¦ ├----┤        └-------┘ ¦
+¦ ¦1  ¦Milk  ¦ ¦ ¦ └----┘ ¦Jazz¦ ¦ ¦ ¦DUB ├---┐              ¦
+¦ ├---┼------┤ ¦ ¦        └----┘ ¦ ¦ ├----┤   ¦    ┌-------┐ ¦
+¦ ¦2  ¦Flour ¦ ¦ ¦ ┌-----┐       ¦ ¦ ¦LHR ├---┼---▷¦London ¦ ¦
+¦ ├---┼------┤ ¦ ¦ ¦Class¦ ┌---┐ ¦ ¦ └----┘   ¦    └-------┘ ¦
+¦ ¦3  ¦Powder¦ ¦ ¦ └-----┘ ¦Cat¦ ¦ ¦          ¦              ¦
+¦ ├---┼------┤ ¦ ¦         └---┘ ¦ ¦          ¦    ┌-------┐ ¦
+¦ ¦4  ¦Hello ¦ ¦ ¦               ¦ ¦          └---▷¦Dubin  ¦ ¦
+¦ └---┴------┘ ¦ ¦               ¦ ¦               └-------┘ ¦
+┗--------------┛ ┗---------------┛ ┗-------------------------┛
+</code></pre>
+    <h2 id="可选和隐式可选类型"><a class="anchor" aria-hidden="true" tabindex="-1" href="#可选和隐式可选类型"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>可选和隐式可选类型</h2>
+    <ul>
+      <li>类型后面用问号 <code>?</code> 表示可选类型；</li>
+      <li>类型后面用感叹号 <code>!</code> 表示隐式可选类型；</li>
+    </ul>
+    <h3 id="可选类型"><a class="anchor" aria-hidden="true" tabindex="-1" href="#可选类型"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>可选类型</h3>
+    <p>当基础类型（整形、浮点、布尔等）没有值时，是不能使用的。Swift 为了表达这种状态，对类型提供了可选的概念。在某个类型后面添加 ? 可以表示一个可选类型，这个可选类型有两种状态：1. 有值；2. 没值</p>
+    <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> optionalInteger<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token operator">?</span>
+optionalInteger <span class="token operator">=</span> <span class="token number">404</span>
+
+<span class="token keyword">if</span> optionalInteger <span class="token operator">!=</span> <span class="token constant">nil</span> <span class="token punctuation">{</span>   <span class="token comment">// 确定可选类型包含值后可以在变量名后加!强制解析</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>optionalInteger<span class="token operator">!</span><span class="token punctuation">)</span>   <span class="token comment">// 404</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> errorCode<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token number">404</span>  <span class="token comment">// 在类型后面添加一个?</span>
+<span class="token function">print</span><span class="token punctuation">(</span>errorCode<span class="token punctuation">)</span>           <span class="token comment">// Optional(404)  // 会打印警告</span>
+errorCode <span class="token operator">=</span> <span class="token constant">nil</span>            <span class="token comment">// 对非可选类型赋值为nil会报错</span>
+<span class="token function">print</span><span class="token punctuation">(</span>errorCode<span class="token punctuation">)</span>           <span class="token comment">// nil            // 会打印警告</span>
+
+<span class="token comment">// 确定可选类型包含值后可以在变量名后加!强制解析</span>
+<span class="token keyword">if</span> errorCode <span class="token operator">!=</span> <span class="token constant">nil</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>errorCode<span class="token operator">!</span><span class="token punctuation">)</span><span class="token comment">// 404</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    <h2 id="问题解决"><a class="anchor" aria-hidden="true" tabindex="-1" href="#问题解决"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>问题解决</h2>
+    <ul>
+      <li><a href="https://github.com/Homebrew/homebrew-core/issues/2712">swift NameError: name 'run_one_line' is not defined</a></li>
+    </ul>
+    <h2 id="工具"><a class="anchor" aria-hidden="true" tabindex="-1" href="#工具"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>工具</h2>
+    <ul>
+      <li><a href="https://github.com/Carthage/Carthage">Carthage</a> 一个简单的，分散的Cocoa依赖管理器</li>
+      <li><a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a> Swift和Objective-C Cocoa项目的依赖管理器。</li>
+    </ul>
+    <h2 id="web框架"><a class="anchor" aria-hidden="true" tabindex="-1" href="#web框架"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Web框架</h2>
+    <ul>
+      <li><a href="https://github.com/apple/swift-nio">apple/swift-nio</a></li>
+      <li><a href="https://github.com/vapor/vapor">Vapor</a></li>
+      <li><a href="https://github.com/PerfectlySoft/Perfect">Perfect</a></li>
+      <li><a href="https://github.com/IBM-Swift/Kitura">Kitura</a></li>
+      <li><a href="https://github.com/Zewo/Zewo">Zewo</a></li>
+      <li><a href="https://github.com/amzn/smoke-framework">Smoke</a></li>
+    </ul>
+    <h2 id="参考教程"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参考教程"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>参考教程</h2>
+    <ul>
+      <li><a href="http://special.csdncms.csdn.net/the-swift-programming-language-in-chinese/Introduction.shtml">The Swift Programming Language 中文版</a></li>
+      <li><a href="https://swift.org/documentation/#the-swift-programming-language">官方文档The Swift Programming Language</a></li>
+      <li><a href="https://github.com/numbbbbb/the-swift-programming-language-in-chinese">官方文档的中文版The Swift Programming Language中文版</a></li>
+      <li><a href="https://darielchen.github.io/SwiftManual/">Swift3.0语法速查手册</a></li>
+      <li><a href="https://www.shiyanlou.com/courses/611">深入浅出 Swift 3</a></li>
+      <li><a href="http://c.biancheng.net/cpp/swift/jiaocheng/">Swift教程</a></li>
+      <li><a href="http://www.imooc.com/search/course?words=swift">慕课网Swift教程</a></li>
+      <li><a href="http://swifter.tips/">Swift 必备 tips</a></li>
+      <li><a href="http://www.swiftguide.cn/">Swift 学习指引</a></li>
+      <li><a href="http://swiftcafe.io/">swiftcafe</a></li>
+      <li><a href="http://swift.gg/">SwiftGG</a></li>
+      <li><a href="http://swiftweekly.cn/">swiftweekly</a></li>
+      <li><a href="http://blog.dianqk.org/">dianqk</a></li>
+    </ul>
+  </div></body>
+</html>
