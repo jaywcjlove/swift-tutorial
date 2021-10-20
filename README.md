@@ -596,6 +596,7 @@ if errorCode != nil {
 - [官方文档的中文版The Swift Programming Language中文版](https://github.com/numbbbbb/the-swift-programming-language-in-chinese)
 - [Swift3.0语法速查手册](https://darielchen.github.io/SwiftManual/)
 - [探索函数式编程和 Swift 的视频系列](https://github.com/pointfreeco/episode-code-samples)
+- [SwiftUI 相关文章](https://serialcoder.dev/category/text-tutorials/swiftui/)
 - [深入浅出 Swift 3](https://www.shiyanlou.com/courses/611)
 - [Swift教程](http://c.biancheng.net/cpp/swift/jiaocheng/)
 - [慕课网Swift教程](http://www.imooc.com/search/course?words=swift)
