@@ -1,1 +1,2 @@
 *.swift linguist-language=swift
+*.md linguist-detectable=true
