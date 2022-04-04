@@ -1,6 +1,5 @@
-
 Swift入门教程、读书笔记
----
+===
 
 如果你已经掌握了一些 Swift 语法基础了，可以通过 [SwiftUI Example](https://github.com/jaywcjlove/swiftui-example) 来练习一些示例进行技术的提升。
 
@@ -607,3 +606,17 @@ if errorCode != nil {
 - [SwiftGG](http://swift.gg)
 - [swiftweekly](http://swiftweekly.cn)
 - [dianqk](http://blog.dianqk.org)
+
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<a href="https://github.com/jaywcjlove/swift-tutorial/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/swift-tutorial/CONTRIBUTORS.svg" />
+</a>
+
+Made with [action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+
+## License
+
+Licensed under the MIT License.
