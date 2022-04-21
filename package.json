@@ -19,6 +19,6 @@
     "swift-tutorial"
   ],
   "dependencies": {
-    "idoc": "^1.10.11"
+    "idoc": "1.10.11"
   }
 }
