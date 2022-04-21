@@ -1,225 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Swift 入门教程、读书笔记</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta description="通过简单的例子，来快速入门 Swift 语言基础编程、语法等各种语言特性，主要面向新手级别的学习者。">
-    <meta keywords="swift,tutorial,swift-tutorial">
-  </head>
-  <body><script type="module">const GITHUB_CORNERS_TEMPLATE = document.createElement("template");
-GITHUB_CORNERS_TEMPLATE.innerHTML = `
-<style>
-:host a:hover .octo-arm { animation: octocat-wave 560ms ease-in-out; }
-@keyframes octocat-wave {
-  0%, 100% { transform: rotate(0); }
-  20%, 60% { transform: rotate(-25deg); }
-  40%, 80% { transform: rotate(10deg); }
-}
-@media (max-width:500px) {
-  :host a:hover .octo-arm { animation: none; }
-  :host .octo-arm { animation: octocat-wave 560ms ease-in-out; }
-}
-</style>
-<svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true" style="position: absolute; border: 0px; top: 0px;">
-  <a xlink:href="https://github.com/uiwjs/react-github-corners" target="_blank" rel="nofollow sponsored" style="fill: rgb(21, 21, 19); color: rgb(255, 255, 255);">
-    <g>
-      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-      <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" class="octo-arm" style="transform-origin: 130px 106px;"></path>
-      <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
-    </g>
-  </a>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Swift 入门教程、读书笔记 </title>
+  
+  <meta name="description" content="如果你已经掌握了一些 Swift 语法基础了，可以通过 SwiftUI Example 来练习一些示例进行技术的提升。">
+  
+  
+  <meta name="keywords" content="swift,tutorial,swift-tutorial">
+  
+  <link rel="stylesheet" type="text/css" href="css/main.css?v=1650564677283">
+  <link rel="stylesheet" type="text/css" href="css/tocbot.css?v=1650564677283">
+  <link rel="stylesheet" type="text/css" href="css/media.css?v=1650564677283">
+  <link rel="stylesheet" type="text/css" href="css/sidebar.css?v=1650564677283">
+  <link rel="stylesheet" type="text/css" href="css/copy.css?v=1650564677283">
+  
+    <link rel="icon" href="swift.svg" type="image/x-icon">
+  
+  <script src="js/copy.js"></script>
+  <script src="js/dark-mode.js"></script>
+  <script src="js/markdown-style.js"></script>
+</head>
+<body>
+<header class="header">
+  <article class="inner warpper">
+    <a class="logo" href="index.html">
+      
+        <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M227.328 0h566.784c27.648 0 54.272 4.608 80.384 13.824 37.376 13.824 71.68 37.376 97.28 68.608 26.112 31.232 43.008 69.632 49.152 109.568 2.56 14.848 2.56 29.696 2.56 44.544v552.96c0 17.408-1.024 35.84-4.608 52.736-8.192 39.424-26.624 76.8-53.76 107.008-26.624 30.208-61.952 52.224-99.84 64.512-23.04 7.168-47.104 10.24-71.68 10.24-10.752 0-568.32 0-576.512-0.512-40.96-2.048-81.408-15.36-115.2-37.888C69.12 963.072 41.984 931.84 24.576 896c-15.36-30.72-23.04-65.024-23.04-99.328V227.84c-1.024-33.792 6.144-67.584 20.992-97.792 17.408-35.84 44.032-67.584 77.312-90.112C134.144 16.384 174.08 3.072 214.528 1.024c4.096-1.024 8.704-1.024 12.8-1.024z" fill="#F95E21"></path>
+  <path d="M863.744 837.632c-3.584-5.632-7.68-11.264-11.776-16.384-10.24-11.776-21.504-22.528-34.304-31.232-15.872-10.752-34.816-17.408-53.76-18.432-13.824-1.024-27.136 1.536-39.936 6.144s-25.088 10.752-37.376 17.408c-13.824 7.168-28.16 14.336-43.008 20.48-17.408 7.168-35.84 12.8-54.784 16.896-23.552 4.608-47.616 6.144-71.168 5.632-43.008-1.024-85.504-7.168-126.464-18.944-35.84-10.752-70.144-25.6-102.912-44.544-28.16-16.384-54.784-35.328-79.36-56.32-20.48-17.408-39.424-36.352-56.832-56.32-11.776-13.824-23.552-28.672-34.304-44.032-4.608-6.144-8.192-12.288-11.776-18.944L0 484.864V226.816C0 101.888 101.376 0 226.304 0h201.728l149.504 152.064c337.408 229.376 228.352 482.816 228.352 482.816s96.256 108.032 57.856 202.752z" fill="#D8491D"></path>
+  <path d="M578.56 152.064c337.408 229.376 228.352 482.816 228.352 482.816s95.744 108.544 57.344 203.264c0 0-39.424-66.56-105.984-66.56-64 0-101.376 66.56-230.4 66.56-286.72 0-422.4-239.616-422.4-239.616 258.048 169.984 434.688 49.664 434.688 49.664-116.224-67.584-364.032-390.656-364.032-390.656 215.552 183.296 308.736 231.936 308.736 231.936-55.808-46.08-211.456-270.848-211.456-270.848 124.928 126.464 372.736 302.592 372.736 302.592C716.288 326.144 578.56 152.064 578.56 152.064z" fill="#FFFFFF"></path>
 </svg>
-`;
-export class GithubCorners extends HTMLElement {
-    constructor() {
-        super();
-        this.right = '0';
-        this.shadow = this.attachShadow({ mode: 'open' });
-        this.shadow.appendChild(this.ownerDocument.importNode(GITHUB_CORNERS_TEMPLATE.content, true));
-        this.update();
-    }
-    static get observedAttributes() {
-        return ['z-index', 'target', 'height', 'width', 'href', 'color', 'fill', 'position', 'top', 'left', 'right', 'bottom', 'transform'];
-    }
-    setAttr(name, value) {
-        const svg = this.shadow.querySelector('svg');
-        if (/(href)/.test(name.toLocaleLowerCase())) {
-            svg.lastElementChild.setAttribute('xlink:href', value);
-        }
-        else if (/(color|fill)/.test(name.toLocaleLowerCase())) {
-            svg.firstElementChild.style[name] = value;
-        }
-        else if (/(z-index|height|width|position|top|left|right|bottom|transform)/.test(name.toLocaleLowerCase())) {
-            svg.style[name] = value;
-        }
-        else {
-            svg.setAttribute(name, value);
-        }
-    }
-    update() {
-        ;
-        [...this.getAttributeNames(), 'right'].forEach((name) => {
-            const value = this.getAttribute(name) || this[name] || '';
-            this.setAttr(name, value);
-        });
-    }
-    attributeChangedCallback(name, oldValue, newValue) {
-        if (oldValue !== newValue) {
-            this.setAttr(name, newValue);
-        }
-    }
-}
-customElements.define('github-corners', GithubCorners);</script><github-corners target="__blank" position="fixed" z-index="999" href="https://github.com/jaywcjlove/swift-tutorial"></github-corners><dark-mode permanent style="position: fixed; top: 8px; left: 10px; z-index: 999;" dark="Dark" light="Light"></dark-mode><script>const t=document;const e="_dark_mode_theme_";const s="permanent";const o="colorschemechange";const i="permanentcolorscheme";const h="light";const r="dark";const n=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){const t=this.getAttribute(e);return t===null?"":t},set(t){this.setAttribute(e,t)}})};const c=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){return this.hasAttribute(e)},set(t){if(t){this.setAttribute(e,"")}else{this.removeAttribute(e)}}})};class a extends HTMLElement{static get observedAttributes(){return["mode",h,r,s]}LOCAL_NANE=e;constructor(){super();this.t()}connectedCallback(){n(this,"mode");n(this,r);n(this,h);c(this,s);const a=localStorage.getItem(e);if(a&&[h,r].includes(a)){this.mode=a;this.permanent=true}if(this.permanent&&!a){localStorage.setItem(e,this.mode)}const l=[h,r].includes(a);if(this.permanent&&a){this.o()}else{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){this.mode=r;this.o()}if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches){this.mode=h;this.o()}}if(!this.permanent&&!l){window.matchMedia("(prefers-color-scheme: light)").onchange=t=>{this.mode=t.matches?h:r;this.o()};window.matchMedia("(prefers-color-scheme: dark)").onchange=t=>{this.mode=t.matches?r:h;this.o()}}const d=new MutationObserver(((s,h)=>{this.mode=t.documentElement.dataset.colorMode;if(this.permanent&&l){localStorage.setItem(e,this.mode);this.i(i,{permanent:this.permanent})}this.h();this.i(o,{colorScheme:this.mode})}));d.observe(t.documentElement,{attributes:true});this.i(o,{colorScheme:this.mode});this.h()}attributeChangedCallback(t,s,o){if(t==="mode"&&s!==o&&[h,r].includes(o)){const t=localStorage.getItem(e);if(this.mode===t){this.mode=o;this.h();this.o()}else if(this.mode&&this.mode!==t){this.h();this.o()}}else if((t===h||t===r)&&s!==o){this.h()}if(t==="permanent"&&typeof this.permanent==="boolean"){this.permanent?localStorage.setItem(e,this.mode):localStorage.removeItem(e)}}o(){t.documentElement.setAttribute("data-color-mode",this.mode)}h(){this.icon.textContent=this.mode===h?"🌒":"🌞";this.text.textContent=this.mode===h?this.getAttribute(r):this.getAttribute(h)}t(){var s=this.attachShadow({mode:"open"});this.label=t.createElement("span");this.label.setAttribute("class","wrapper");this.label.onclick=()=>{this.mode=this.mode===h?r:h;if(this.permanent){localStorage.setItem(e,this.mode)}this.o();this.h()};s.appendChild(this.label);this.icon=t.createElement("span");this.label.appendChild(this.icon);this.text=t.createElement("span");this.label.appendChild(this.text);const o=`
-[data-color-mode*='dark'], [data-color-mode*='dark'] body {
-  color-scheme: dark;
-  --color-theme-bg: #0d1117;
-  --color-theme-text: #c9d1d9;
-  background-color: var(--color-theme-bg);
-  color: var(--color-theme-text);
-}
+      
+      <span class="title">Swift 入门教程、读书笔记</span>
+    </a>
+    <div class="content">
+      <ul class="menu">
+        
+      </ul>
+      
+        <a href="https://github.com/jaywcjlove/swift-tutorial" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+      
+      <dark-mode permanent></dark-mode>
+    </div>
+  </article>
+</header>
 
-[data-color-mode*='light'], [data-color-mode*='light'] body {
-  color-scheme: light;
-  --color-theme-bg: #fff;
-  --color-theme-text: #24292f;
-  background-color: var(--color-theme-bg);
-  color: var(--color-theme-text);
-}`;const i="_dark_mode_style_";const n=t.getElementById(i);if(!n){var c=t.createElement("style");c.id=i;c.textContent=o;t.head.appendChild(c)}var a=t.createElement("style");a.textContent=`
-    .wrapper { cursor: pointer; user-select: none; position: relative; }
-    .wrapper > span + span { margin-left: .4rem; }
-    `;s.appendChild(a)}i(t,e){this.dispatchEvent(new CustomEvent(t,{bubbles:true,composed:true,detail:e}))}}customElements.define("dark-mode",a);</script><script>const __TEMPLATE__ = document.createElement('template');
-__TEMPLATE__.innerHTML = `
-<style>
+<div class="warpper-content warpper  ">
+  
+  <markdown-style>
+    
+<p><a href="https://github.com/jaywcjlove/swift-tutorial/actions/workflows/ci.yml"><img src="https://github.com/jaywcjlove/swift-tutorial/actions/workflows/ci.yml/badge.svg" alt="CI"></a></p>
+<p>如果你已经掌握了一些 Swift 语法基础了，可以通过 <a href="https://github.com/jaywcjlove/swiftui-example">SwiftUI Example</a> 来练习一些示例进行技术的提升。</p>
+<!--idoc:config:
+favicon: ./swift.svg
+logo: ./swift.svg
+editButton: 
+  label: Edit this page on GitHub
+  url: https://github.com/jaywcjlove/swift-tutorial/blob/master/
+footer: |
+  Released under the MIT License. Copyright © 2022 Kenny Wong<br />
+  Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a> v{{idocVersion}}
+-->
 
-markdown-style h1:hover a.anchor .octicon-link:before,
-markdown-style h2:hover a.anchor .octicon-link:before,
-markdown-style h3:hover a.anchor .octicon-link:before,
-markdown-style h4:hover a.anchor .octicon-link:before,
-markdown-style h5:hover a.anchor .octicon-link:before,
-markdown-style h6:hover a.anchor .octicon-link:before {
-  width: 16px;
-  height: 16px;
-  content: ' ';
-  display: inline-block;
-  background-color: currentColor;
-  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
-  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
-}
-markdown-style[theme*='light'] { --color-prettylights-syntax-comment: #6e7781; --color-prettylights-syntax-constant: #0550ae; --color-prettylights-syntax-entity: #8250df; --color-prettylights-syntax-storage-modifier-import: #24292f; --color-prettylights-syntax-entity-tag: #116329; --color-prettylights-syntax-keyword: #cf222e; --color-prettylights-syntax-string: #0a3069; --color-prettylights-syntax-variable: #953800; --color-prettylights-syntax-brackethighlighter-unmatched: #82071e; --color-prettylights-syntax-invalid-illegal-text: #f6f8fa; --color-prettylights-syntax-invalid-illegal-bg: #82071e; --color-prettylights-syntax-carriage-return-text: #f6f8fa; --color-prettylights-syntax-carriage-return-bg: #cf222e; --color-prettylights-syntax-string-regexp: #116329; --color-prettylights-syntax-markup-list: #3b2300; --color-prettylights-syntax-markup-heading: #0550ae; --color-prettylights-syntax-markup-italic: #24292f; --color-prettylights-syntax-markup-bold: #24292f; --color-prettylights-syntax-markup-deleted-text: #82071e; --color-prettylights-syntax-markup-deleted-bg: #FFEBE9; --color-prettylights-syntax-markup-inserted-text: #116329; --color-prettylights-syntax-markup-inserted-bg: #dafbe1; --color-prettylights-syntax-markup-changed-text: #953800; --color-prettylights-syntax-markup-changed-bg: #ffd8b5; --color-prettylights-syntax-markup-ignored-text: #eaeef2; --color-prettylights-syntax-markup-ignored-bg: #0550ae; --color-prettylights-syntax-meta-diff-range: #8250df; --color-prettylights-syntax-brackethighlighter-angle: #57606a; --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f; --color-prettylights-syntax-constant-other-reference-link: #0a3069; --color-fg-default: #24292f; --color-fg-muted: #57606a; --color-fg-subtle: #6e7781; --color-canvas-default: #ffffff; --color-canvas-subtle: #f6f8fa; --color-border-default: #d0d7de; --color-border-muted: hsla(210,18%,87%,1); --color-neutral-muted: rgba(175,184,193,0.2); --color-accent-fg: #0969da; --color-accent-emphasis: #0969da; --color-attention-subtle: #fff8c5; --color-danger-fg: #cf222e; } markdown-style[theme*='dark'] { --color-prettylights-syntax-comment: #8b949e; --color-prettylights-syntax-constant: #79c0ff; --color-prettylights-syntax-entity: #d2a8ff; --color-prettylights-syntax-storage-modifier-import: #c9d1d9; --color-prettylights-syntax-entity-tag: #7ee787; --color-prettylights-syntax-keyword: #ff7b72; --color-prettylights-syntax-string: #a5d6ff; --color-prettylights-syntax-variable: #ffa657; --color-prettylights-syntax-brackethighlighter-unmatched: #f85149; --color-prettylights-syntax-invalid-illegal-text: #f0f6fc; --color-prettylights-syntax-invalid-illegal-bg: #8e1519; --color-prettylights-syntax-carriage-return-text: #f0f6fc; --color-prettylights-syntax-carriage-return-bg: #b62324; --color-prettylights-syntax-string-regexp: #7ee787; --color-prettylights-syntax-markup-list: #f2cc60; --color-prettylights-syntax-markup-heading: #1f6feb; --color-prettylights-syntax-markup-italic: #c9d1d9; --color-prettylights-syntax-markup-bold: #c9d1d9; --color-prettylights-syntax-markup-deleted-text: #ffdcd7; --color-prettylights-syntax-markup-deleted-bg: #67060c; --color-prettylights-syntax-markup-inserted-text: #aff5b4; --color-prettylights-syntax-markup-inserted-bg: #033a16; --color-prettylights-syntax-markup-changed-text: #ffdfb6; --color-prettylights-syntax-markup-changed-bg: #5a1e02; --color-prettylights-syntax-markup-ignored-text: #c9d1d9; --color-prettylights-syntax-markup-ignored-bg: #1158c7; --color-prettylights-syntax-meta-diff-range: #d2a8ff; --color-prettylights-syntax-brackethighlighter-angle: #8b949e; --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58; --color-prettylights-syntax-constant-other-reference-link: #a5d6ff; --color-fg-default: #c9d1d9; --color-fg-muted: #8b949e; --color-fg-subtle: #484f58; --color-canvas-default: #0d1117; --color-canvas-subtle: #161b22; --color-border-default: #30363d; --color-border-muted: #21262d; --color-neutral-muted: rgba(110,118,129,0.4); --color-accent-fg: #58a6ff; --color-accent-emphasis: #1f6feb; --color-attention-subtle: rgba(187,128,9,0.15); --color-danger-fg: #f85149; } markdown-style { display: block; -webkit-text-size-adjust: 100%; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; font-size: 16px; line-height: 1.5; word-wrap: break-word; color: var(--color-fg-default); background-color: var(--color-canvas-default); } markdown-style details, markdown-style figcaption, markdown-style figure { display: block; } markdown-style summary { display: list-item; } markdown-style [hidden] { display: none !important; } markdown-style a { background-color: transparent; color: var(--color-accent-fg); text-decoration: none; } markdown-style a:active, markdown-style a:hover { outline-width: 0; } markdown-style abbr[title] { border-bottom: none; text-decoration: underline dotted; } markdown-style b, markdown-style strong { font-weight: 600; } markdown-style dfn { font-style: italic; } markdown-style h1 { margin: .67em 0; font-weight: 600; padding-bottom: .3em; font-size: 2em; border-bottom: 1px solid var(--color-border-muted); } markdown-style mark { background-color: var(--color-attention-subtle); color: var(--color-text-primary); } markdown-style small { font-size: 90%; } markdown-style sub, markdown-style sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; } markdown-style sub { bottom: -0.25em; } markdown-style sup { top: -0.5em; } markdown-style img { border-style: none; max-width: 100%; box-sizing: content-box; background-color: var(--color-canvas-default); } markdown-style code, markdown-style kbd, markdown-style pre, markdown-style samp { font-family: monospace,monospace; font-size: 1em; } markdown-style figure { margin: 1em 40px; } markdown-style hr { box-sizing: content-box; overflow: hidden; background: transparent; border-bottom: 1px solid var(--color-border-muted); height: .25em; padding: 0; margin: 24px 0; background-color: var(--color-border-default); border: 0; } markdown-style input { font: inherit; margin: 0; overflow: visible; font-family: inherit; font-size: inherit; line-height: inherit; } markdown-style [type=button], markdown-style [type=reset], markdown-style [type=submit] { -webkit-appearance: button; } markdown-style [type=button]::-moz-focus-inner, markdown-style [type=reset]::-moz-focus-inner, markdown-style [type=submit]::-moz-focus-inner { border-style: none; padding: 0; } markdown-style [type=button]:-moz-focusring, markdown-style [type=reset]:-moz-focusring, markdown-style [type=submit]:-moz-focusring { outline: 1px dotted ButtonText; } markdown-style [type=checkbox], markdown-style [type=radio] { box-sizing: border-box; padding: 0; } markdown-style [type=number]::-webkit-inner-spin-button, markdown-style [type=number]::-webkit-outer-spin-button { height: auto; } markdown-style [type=search] { -webkit-appearance: textfield; outline-offset: -2px; } markdown-style [type=search]::-webkit-search-cancel-button, markdown-style [type=search]::-webkit-search-decoration { -webkit-appearance: none; } markdown-style ::-webkit-input-placeholder { color: inherit; opacity: .54; } markdown-style ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; } markdown-style a:hover { text-decoration: underline; } markdown-style hr::before { display: table; content: ""; } markdown-style hr::after { display: table; clear: both; content: ""; } markdown-style table { border-spacing: 0; border-collapse: collapse; display: block; width: max-content; max-width: 100%; overflow: auto; } markdown-style td, markdown-style th { padding: 0; } markdown-style details summary { cursor: pointer; } markdown-style details:not([open])>*:not(summary) { display: none !important; } markdown-style kbd { display: inline-block; padding: 3px 5px; font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; line-height: 10px; color: var(--color-fg-default); vertical-align: middle; background-color: var(--color-canvas-subtle); border: solid 1px var(--color-neutral-muted); border-bottom-color: var(--color-neutral-muted); border-radius: 6px; box-shadow: inset 0 -1px 0 var(--color-neutral-muted); } markdown-style h1, markdown-style h2, markdown-style h3, markdown-style h4, markdown-style h5, markdown-style h6 { margin-top: 24px; margin-bottom: 16px; font-weight: 600; line-height: 1.25; } markdown-style h2 { font-weight: 600; padding-bottom: .3em; font-size: 1.5em; border-bottom: 1px solid var(--color-border-muted); } markdown-style h3 { font-weight: 600; font-size: 1.25em; } markdown-style h4 { font-weight: 600; font-size: 1em; } markdown-style h5 { font-weight: 600; font-size: .875em; } markdown-style h6 { font-weight: 600; font-size: .85em; color: var(--color-fg-muted); } markdown-style p { margin-top: 0; margin-bottom: 10px; } markdown-style blockquote { margin: 0; padding: 0 1em; color: var(--color-fg-muted); border-left: .25em solid var(--color-border-default); } markdown-style ul, markdown-style ol { margin-top: 0; margin-bottom: 0; padding-left: 2em; } markdown-style ol ol, markdown-style ul ol { list-style-type: lower-roman; } markdown-style ul ul ol, markdown-style ul ol ol, markdown-style ol ul ol, markdown-style ol ol ol { list-style-type: lower-alpha; } markdown-style dd { margin-left: 0; } markdown-style tt, markdown-style code { font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; font-size: 12px; } markdown-style pre { margin-top: 0; margin-bottom: 0; font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; font-size: 12px; word-wrap: normal; } markdown-style .octicon { display: inline-block; overflow: visible !important; vertical-align: text-bottom; fill: currentColor; } markdown-style ::placeholder { color: var(--color-fg-subtle); opacity: 1; } markdown-style input::-webkit-outer-spin-button, markdown-style input::-webkit-inner-spin-button { margin: 0; -webkit-appearance: none; appearance: none; }
-markdown-style .token.comment, markdown-style .token.prolog, markdown-style .token.doctype, markdown-style .token.cdata { color: var(--color-prettylights-syntax-comment); } markdown-style .token.namespace { opacity: 0.7; } markdown-style .token.tag, markdown-style .token.selector, markdown-style .token.constant, markdown-style .token.symbol, markdown-style .token.deleted { color: var(--color-prettylights-syntax-entity-tag); } markdown-style .token.maybe-class-name { color: var(--color-prettylights-syntax-variable); } markdown-style .token.property-access, markdown-style .token.operator, markdown-style .token.boolean, markdown-style .token.number, markdown-style .token.selector markdown-style .token.class, markdown-style .token.attr-name, markdown-style .token.string, markdown-style .token.char, markdown-style .token.builtin { color: var(--color-prettylights-syntax-constant); } markdown-style .token.deleted { color: var(--color-prettylights-syntax-markup-deleted-text); } markdown-style .token.property { color: var(--color-prettylights-syntax-constant); } markdown-style .token.punctuation { color: var(--color-prettylights-syntax-markup-bold); } markdown-style .token.function { color: var(--color-prettylights-syntax-entity); } markdown-style .code-line .token.deleted { background-color: var(--color-prettylights-syntax-markup-deleted-bg); } markdown-style .token.inserted { color: var(--color-prettylights-syntax-markup-inserted-text); } markdown-style .code-line .token.inserted { background-color: var(--color-prettylights-syntax-markup-inserted-bg); } markdown-style .token.variable { color: var(--color-prettylights-syntax-constant); } markdown-style .token.entity, markdown-style .token.url, .language-css markdown-style .token.string, .style markdown-style .token.string { color: var(--color-prettylights-syntax-string); } markdown-style .token.color, markdown-style .token.atrule, markdown-style .token.attr-value, markdown-style .token.function, markdown-style .token.class-name { color: var(--color-prettylights-syntax-string); } markdown-style .token.rule, markdown-style .token.regex, markdown-style .token.important, markdown-style .token.keyword { color: var(--color-prettylights-syntax-keyword); } markdown-style .token.coord { color: var(--color-prettylights-syntax-meta-diff-range); } markdown-style .token.important, markdown-style .token.bold { font-weight: bold; } markdown-style .token.italic { font-style: italic; } markdown-style .token.entity { cursor: help; } markdown-style [data-catalyst] { display: block; }
-markdown-style g-emoji { font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 1em; font-style: normal !important; font-weight: 400; line-height: 1; vertical-align: -0.075em; } markdown-style g-emoji img { width: 1em; height: 1em; } markdown-style::before { display: table; content: ""; } markdown-style::after { display: table; clear: both; content: ""; } markdown-style>*:first-child { margin-top: 0 !important; } markdown-style>*:last-child { margin-bottom: 0 !important; } markdown-style a:not([href]) { color: inherit; text-decoration: none; } markdown-style .absent { color: var(--color-danger-fg); } markdown-style .anchor { float: left; padding-right: 4px; margin-left: -20px; line-height: 1; } markdown-style .anchor:focus { outline: none; } markdown-style p, markdown-style blockquote, markdown-style ul, markdown-style ol, markdown-style dl, markdown-style table, markdown-style pre, markdown-style details { margin-top: 0; margin-bottom: 16px; } markdown-style blockquote>:first-child { margin-top: 0; } markdown-style blockquote>:last-child { margin-bottom: 0; } markdown-style sup>a::before { content: "["; } markdown-style sup>a::after { content: "]"; } markdown-style h1 .octicon-link, markdown-style h2 .octicon-link, markdown-style h3 .octicon-link, markdown-style h4 .octicon-link, markdown-style h5 .octicon-link, markdown-style h6 .octicon-link { color: var(--color-fg-default); vertical-align: middle; visibility: hidden; } markdown-style h1:hover .anchor, markdown-style h2:hover .anchor, markdown-style h3:hover .anchor, markdown-style h4:hover .anchor, markdown-style h5:hover .anchor, markdown-style h6:hover .anchor { text-decoration: none; } markdown-style h1:hover .anchor .octicon-link, markdown-style h2:hover .anchor .octicon-link, markdown-style h3:hover .anchor .octicon-link, markdown-style h4:hover .anchor .octicon-link, markdown-style h5:hover .anchor .octicon-link, markdown-style h6:hover .anchor .octicon-link { visibility: visible; } markdown-style h1 tt, markdown-style h1 code, markdown-style h2 tt, markdown-style h2 code, markdown-style h3 tt, markdown-style h3 code, markdown-style h4 tt, markdown-style h4 code, markdown-style h5 tt, markdown-style h5 code, markdown-style h6 tt, markdown-style h6 code { padding: 0 .2em; font-size: inherit; } markdown-style ul.no-list, markdown-style ol.no-list { padding: 0; list-style-type: none; } markdown-style ol[type="1"] { list-style-type: decimal; } markdown-style ol[type=a] { list-style-type: lower-alpha; } markdown-style ol[type=i] { list-style-type: lower-roman; } markdown-style div>ol:not([type]) { list-style-type: decimal; } markdown-style ul ul, markdown-style ul ol, markdown-style ol ol, markdown-style ol ul { margin-top: 0; margin-bottom: 0; } markdown-style li>p { margin-top: 16px; } markdown-style li+li { margin-top: .25em; } markdown-style dl { padding: 0; } markdown-style dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: 600; } markdown-style dl dd { padding: 0 16px; margin-bottom: 16px; } markdown-style table th { font-weight: 600; } markdown-style table th, markdown-style table td { padding: 6px 13px; border: 1px solid var(--color-border-default); } markdown-style table tr { background-color: var(--color-canvas-default); border-top: 1px solid var(--color-border-muted); } markdown-style table tr:nth-child(2n) { background-color: var(--color-canvas-subtle); } markdown-style table img { background-color: transparent; } markdown-style img[align=right] { padding-left: 20px; } markdown-style img[align=left] { padding-right: 20px; } markdown-style .emoji { max-width: none; vertical-align: text-top; background-color: transparent; } markdown-style span.frame { display: block; overflow: hidden; } markdown-style span.frame>span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0 0; overflow: hidden; border: 1px solid var(--color-border-default); } markdown-style span.frame span img { display: block; float: left; } markdown-style span.frame span span { display: block; padding: 5px 0 0; clear: both; color: var(--color-fg-default); } markdown-style span.align-center { display: block; overflow: hidden; clear: both; } markdown-style span.align-center>span { display: block; margin: 13px auto 0; overflow: hidden; text-align: center; } markdown-style span.align-center span img { margin: 0 auto; text-align: center; } markdown-style span.align-right { display: block; overflow: hidden; clear: both; } markdown-style span.align-right>span { display: block; margin: 13px 0 0; overflow: hidden; text-align: right; } markdown-style span.align-right span img { margin: 0; text-align: right; } markdown-style span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; } markdown-style span.float-left span { margin: 13px 0 0; } markdown-style span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; } markdown-style span.float-right>span { display: block; margin: 13px auto 0; overflow: hidden; text-align: right; } markdown-style code, markdown-style tt { padding: .2em .4em; margin: 0; font-size: 85%; background-color: var(--color-neutral-muted); border-radius: 6px; } markdown-style code br, markdown-style tt br { display: none; } markdown-style del code { text-decoration: inherit; } markdown-style pre code { font-size: 100%; } markdown-style pre>code { padding: 0; margin: 0; word-break: normal; white-space: pre; background: transparent; border: 0; } markdown-style .highlight { margin-bottom: 16px; } markdown-style .highlight pre { margin-bottom: 0; word-break: normal; } markdown-style .highlight pre, markdown-style pre { position: relative; padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: var(--color-canvas-subtle); border-radius: 6px; } markdown-style pre code, markdown-style pre tt { display: inline; max-width: auto; padding: 0; margin: 0; overflow: visible; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } markdown-style .csv-data td, markdown-style .csv-data th { padding: 5px; overflow: hidden; font-size: 12px; line-height: 1; text-align: left; white-space: nowrap; } markdown-style .csv-data .blob-num { padding: 10px 8px 9px; text-align: right; background: var(--color-canvas-default); border: 0; } markdown-style .csv-data tr { border-top: 0; } markdown-style .csv-data th { font-weight: 600; background: var(--color-canvas-subtle); border-top: 0; } markdown-style .footnotes { font-size: 12px; color: var(--color-fg-muted); border-top: 1px solid var(--color-border-default); } markdown-style .footnotes ol { padding-left: 16px; } markdown-style .footnotes li { position: relative; } markdown-style .footnotes li:target::before { position: absolute; top: -8px; right: -8px; bottom: -8px; left: -24px; pointer-events: none; content: ""; border: 2px solid var(--color-accent-emphasis); border-radius: 6px; } markdown-style .footnotes li:target { color: var(--color-fg-default); } markdown-style .footnotes .data-footnote-backref g-emoji { font-family: monospace; } markdown-style .task-list-item { list-style-type: none; } markdown-style .task-list-item label { font-weight: 400; } markdown-style .task-list-item.enabled label { cursor: pointer; } markdown-style .task-list-item+.task-list-item { margin-top: 3px; } markdown-style .task-list-item .handle { display: none; } markdown-style .task-list-item-checkbox, markdown-style input[type="checkbox"] { margin: 0 .2em .25em -1.6em; vertical-align: middle; } markdown-style .contains-task-list:dir(rtl) .task-list-item-checkbox, markdown-style .contains-task-list:dir(rtl) input[type="checkbox"] { margin: 0 -1.6em .25em .2em; } markdown-style ::-webkit-calendar-picker-indicator { filter: invert(50%); }
-</style>
-<slot></slot>
-`;
-class MarkdownStyle extends HTMLElement {
-    constructor() {
-        super();
-        this.initTheme = this.getAttribute('theme');
-        this.shadow = this.attachShadow({ mode: 'open' });
-        this.shadow.appendChild(__TEMPLATE__.content.cloneNode(true));
-        this.setTheme();
-        const style = Array.prototype.slice
-            .call(this.shadow.children)
-            .find((item) => item.tagName === 'STYLE');
-        if (style) {
-            const id = '__MARKDOWN_STYLE__';
-            const findStyle = document.getElementById(id);
-            if (!findStyle) {
-                style.id = id;
-                document.head.append(style);
-            }
-        }
-    }
-    setTheme() {
-        if (!this.initTheme) {
-            const { colorMode } = document.documentElement.dataset;
-            this.theme = colorMode;
-            if (this.theme === 'undefined') {
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    this.theme = 'dark';
-                }
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                    this.theme = 'light';
-                }
-            }
-        }
-    }
-    connectedCallback() {
-        this.installStringReflection('theme');
-        if (!this.initTheme) {
-            this.setTheme();
-            const observer = new MutationObserver((mutationsList, observer) => {
-                this.theme = document.documentElement.dataset.colorMode;
-                this.setTheme();
-            });
-            // Start observing the target node with the above configuration
-            observer.observe(document.documentElement, { attributes: true });
-            window.matchMedia('(prefers-color-scheme: light)').onchange = (event) => {
-                this.theme = event.matches ? 'light' : 'dark';
-                this.setTheme();
-            };
-            window.matchMedia('(prefers-color-scheme: dark)').onchange = (event) => {
-                this.theme = event.matches ? 'dark' : 'light';
-                this.setTheme();
-            };
-        }
-    }
-    /**
-     * See https://html.spec.whatwg.org/multipage/common-dom-interfaces.html
-     * #reflecting-content-attributes-in-idl-attributes.
-     */
-    installStringReflection(attrName, propName = attrName) {
-        Object.defineProperty(this, propName, {
-            enumerable: true,
-            get() {
-                const value = this.getAttribute(attrName);
-                return value === null ? '' : value;
-            },
-            set(v) {
-                this.setAttribute(attrName, v);
-            },
-        });
-    }
-}
-customElements.define('markdown-style', MarkdownStyle);
-</script><markdown-style style="max-width: 960px; margin: 0 auto 60px auto; padding: 8px" class="markdown-body">
-    <h1 id="swift入门教程读书笔记"><a class="anchor" aria-hidden="true" tabindex="-1" href="#swift入门教程读书笔记"><span class="octicon octicon-link"></span></a>Swift入门教程、读书笔记</h1>
-    <p>如果你已经掌握了一些 Swift 语法基础了，可以通过 <a href="https://github.com/jaywcjlove/swiftui-example">SwiftUI Example</a> 来练习一些示例进行技术的提升。</p>
-    <h2 id="示例目录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#示例目录"><span class="octicon octicon-link"></span></a>示例目录</h2>
-    <ul>
-      <li><a href="#%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83">准备环境</a></li>
-      <li><a href="#swiftc%E5%91%BD%E4%BB%A4">swiftc命令</a></li>
-      <li><a href="#print">print</a></li>
-      <li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5">字符串拼接</a></li>
-      <li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
-      <li><a href="#%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F">常量、变量</a></li>
-      <li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6">运算符</a></li>
-      <li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a>
-        <ul>
-          <li><a href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B">数值类型</a></li>
-          <li><a href="#%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4">数值范围</a></li>
-          <li><a href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D">类型别名</a></li>
-          <li><a href="#%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8">类型安全</a></li>
-          <li><a href="#%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD">类型推断</a></li>
-          <li><a href="#%E5%85%83%E7%BB%84%E5%92%8C%E9%9B%86%E5%90%88">元组和集合</a></li>
-        </ul>
-      </li>
-      <li><a href="#%E5%8F%AF%E9%80%89%E5%92%8C%E9%9A%90%E5%BC%8F%E5%8F%AF%E9%80%89%E7%B1%BB%E5%9E%8B">可选和隐式可选类型</a>
-        <ul>
-          <li><a href="#%E5%8F%AF%E9%80%89%E7%B1%BB%E5%9E%8B">可选类型</a></li>
-        </ul>
-      </li>
-      <li><a href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">问题解决</a></li>
-      <li><a href="#%E5%B7%A5%E5%85%B7">工具</a></li>
-      <li><a href="#web%E6%A1%86%E6%9E%B6">Web框架</a></li>
-      <li><a href="#%E5%8F%82%E8%80%83%E6%95%99%E7%A8%8B">参考教程</a></li>
-    </ul>
-    <h2 id="准备环境"><a class="anchor" aria-hidden="true" tabindex="-1" href="#准备环境"><span class="octicon octicon-link"></span></a>准备环境</h2>
-    <p>在 Mac 上学习 Swift 非常简单，你只需在 App Store 中安装 <a href="https://itunes.apple.com/cn/app/xcode/id497799835">Xcode</a> 即可。接下来，你有两种方法来学习 Swift 基础语法。</p>
-    <p><strong>方法一：通过命令行</strong></p>
-    <p>你只需打开 Terminal 运行 swift 命令即可：</p>
-    <pre><code class="code-highlight"><span class="code-line">$ swift
+<h2 id="准备环境"><a aria-hidden="true" tabindex="-1" href="#准备环境" class="anchor"><span class="icon icon-link"></span></a>准备环境</h2>
+<p>在 Mac 上学习 Swift 非常简单，你只需在 App Store 中安装 <a href="https://itunes.apple.com/cn/app/xcode/id497799835">Xcode</a> 即可。接下来，你有两种方法来学习 Swift 基础语法。</p>
+<p><strong>方法一：通过命令行</strong></p>
+<p>你只需打开 Terminal 运行 swift 命令即可：</p>
+<pre><code class="code-highlight"><span class="code-line">$ swift
 </span><span class="code-line">Welcome to Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1). Type :help for assistance.
 </span><span class="code-line">  1> var str = "Hello Siwft!"
 </span><span class="code-line">str: String = "Hello Siwft!"
@@ -230,26 +84,26 @@ Welcome to Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1). Ty
 str: String = &#x22;Hello Siwft!&#x22;
   2>:q   //:q是推出命令
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>运行 Swift 文件，在学习过程中，可以把一些存成 .swift 后缀的文件，通过 <code>swift filename.swift</code> 命令运行它输出结果。</p>
-    <p><strong>方法二：通过Xcode运行</strong></p>
-    <p>打开 Xcode 软件，可以看到一个Xcode的欢迎界面，如果欢迎界面没有出来，你可以使用快捷键唤出 <code>⇧+⌘+1</code>(shift+command+1)，在欢迎界面上可以看到 <strong>Get started with a playground</strong> 菜单，点击它建立一个 playground 的文件。我们可以在上面写代码，实时运行 swift 代码打印出运行结果。</p>
-    <h2 id="swiftc命令"><a class="anchor" aria-hidden="true" tabindex="-1" href="#swiftc命令"><span class="octicon octicon-link"></span></a>swiftc命令</h2>
-    <p>上面通过swift运行程序，同时我们可以通过swiftc编译命令，编译成一个可执行的文件，直接运行可执行文件，遐想一下，感觉我们用swift可以干好多活儿。下面来运行一个 Hello World。</p>
-    <p>我们使用函数 print 来输出一个 Hello World 字符串。建立一个 <a href="examples/demo1.swift">demo1.swift</a> 输入下面代码，放到了 examples 目录中：</p>
-    <pre><code class="code-highlight"><span class="code-line">print("Hello world!")
+<p>运行 Swift 文件，在学习过程中，可以把一些存成 .swift 后缀的文件，通过 <code>swift filename.swift</code> 命令运行它输出结果。</p>
+<p><strong>方法二：通过Xcode运行</strong></p>
+<p>打开 Xcode 软件，可以看到一个Xcode的欢迎界面，如果欢迎界面没有出来，你可以使用快捷键唤出 <code>⇧+⌘+1</code>(shift+command+1)，在欢迎界面上可以看到 <strong>Get started with a playground</strong> 菜单，点击它建立一个 playground 的文件。我们可以在上面写代码，实时运行 swift 代码打印出运行结果。</p>
+<h2 id="swiftc命令"><a aria-hidden="true" tabindex="-1" href="#swiftc命令" class="anchor"><span class="icon icon-link"></span></a>swiftc命令</h2>
+<p>上面通过swift运行程序，同时我们可以通过swiftc编译命令，编译成一个可执行的文件，直接运行可执行文件，遐想一下，感觉我们用swift可以干好多活儿。下面来运行一个 Hello World。</p>
+<p>我们使用函数 print 来输出一个 Hello World 字符串。建立一个 <a href="examples/demo1.swift">demo1.swift</a> 输入下面代码，放到了 examples 目录中：</p>
+<pre><code class="code-highlight"><span class="code-line">print("Hello world!")
 </span></code><div onclick="copied(this)" data-code="print(&#x22;Hello world!&#x22;)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>将 examples 目录中的 <a href="examples/demo1.swift">demo1.swift</a> 文件，编译出的可执行文件输出到 examples 目录中 文件名为 demo</p>
-    <pre><code class="code-highlight"><span class="code-line">swiftc examples/demo1.swift -o examples/demo
+<p>将 examples 目录中的 <a href="examples/demo1.swift">demo1.swift</a> 文件，编译出的可执行文件输出到 examples 目录中 文件名为 demo</p>
+<pre><code class="code-highlight"><span class="code-line">swiftc examples/demo1.swift -o examples/demo
 </span></code><div onclick="copied(this)" data-code="swiftc examples/demo1.swift -o examples/demo
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>通过 swift 运行 demo 并输出 Hello world!。</p>
-    <pre><code class="code-highlight"><span class="code-line">./examples/demo
+<p>通过 swift 运行 demo 并输出 Hello world!。</p>
+<pre><code class="code-highlight"><span class="code-line">./examples/demo
 </span></code><div onclick="copied(this)" data-code="./examples/demo
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h2 id="print"><a class="anchor" aria-hidden="true" tabindex="-1" href="#print"><span class="octicon octicon-link"></span></a>print</h2>
-    <p>它是一个输出函数，在 <a href="examples/demo1.swift">demo1.swift</a> 中我们使用过这个函数，现在建立 <a href="examples/demo1.swift">demo1.swift</a> 文件，通过print函数输出多个值，使用 print的参数separator将分隔符自定义一下。例如：</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> year <span class="token operator">=</span> <span class="token number">1987</span>
+<h2 id="print"><a aria-hidden="true" tabindex="-1" href="#print" class="anchor"><span class="icon icon-link"></span></a>print</h2>
+<p>它是一个输出函数，在 <a href="examples/demo1.swift">demo1.swift</a> 中我们使用过这个函数，现在建立 <a href="examples/demo1.swift">demo1.swift</a> 文件，通过print函数输出多个值，使用 print的参数separator将分隔符自定义一下。例如：</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> year <span class="token operator">=</span> <span class="token number">1987</span>
 </span><span class="code-line"><span class="token keyword">var</span> month <span class="token operator">=</span> <span class="token number">11</span>
 </span><span class="code-line"><span class="token keyword">var</span> day <span class="token operator">=</span> <span class="token number">3</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>year<span class="token punctuation">,</span>month<span class="token punctuation">,</span>day<span class="token punctuation">,</span>separator<span class="token punctuation">:</span><span class="token string-literal"><span class="token string">"-"</span></span><span class="token punctuation">)</span>
@@ -258,15 +112,15 @@ var month = 11
 var day = 3
 print(year,month,day,separator:&#x22;-&#x22;)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>运行测试它，我们将看到输出结果：</p>
-    <pre><code class="code-highlight"><span class="code-line">$ swift examples/demo2.swift
+<p>运行测试它，我们将看到输出结果：</p>
+<pre><code class="code-highlight"><span class="code-line">$ swift examples/demo2.swift
 </span><span class="code-line">1987-11-3
 </span></code><div onclick="copied(this)" data-code="$ swift examples/demo2.swift
 1987-11-3
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h2 id="字符串拼接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#字符串拼接"><span class="octicon octicon-link"></span></a>字符串拼接</h2>
-    <p>特别注意，在变量上面可以使用<code>+</code>来拼接字符串，常量拼接字符串会报错，常量和变量拼接同样报错。<a href="examples/demo12.swift">demo12.swift</a></p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> version <span class="token operator">=</span> <span class="token number">3</span>
+<h2 id="字符串拼接"><a aria-hidden="true" tabindex="-1" href="#字符串拼接" class="anchor"><span class="icon icon-link"></span></a>字符串拼接</h2>
+<p>特别注意，在变量上面可以使用<code>+</code>来拼接字符串，常量拼接字符串会报错，常量和变量拼接同样报错。<a href="examples/demo12.swift">demo12.swift</a></p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> version <span class="token operator">=</span> <span class="token number">3</span>
 </span><span class="code-line"><span class="token keyword">let</span> tutorial <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Swift </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">version</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> tutorial"</span></span>
 </span><span class="code-line"><span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Hello </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">tutorial</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">!"</span></span>
 </span><span class="code-line"><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Hello !"</span></span> <span class="token operator">+</span> <span class="token string-literal"><span class="token string">"sdsd"</span></span>
@@ -279,27 +133,27 @@ var name = &#x22;Hello !&#x22; + &#x22;sdsd&#x22;
 print(tutorial)
 print(message)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h2 id="注释"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注释"><span class="octicon octicon-link"></span></a>注释</h2>
-    <p>Swift注释与JS注释一样。</p>
-    <p>段落注释</p>
-    <pre><code class="code-highlight"><span class="code-line">/*
-</span><span class="code-line"> 这里是段落注释
-</span><span class="code-line"> */
+<h2 id="注释"><a aria-hidden="true" tabindex="-1" href="#注释" class="anchor"><span class="icon icon-link"></span></a>注释</h2>
+<p>Swift注释与JS注释一样。</p>
+<p>段落注释</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token comment">/*
+</span></span><span class="code-line"><span class="token comment"> 这里是段落注释
+</span></span><span class="code-line"><span class="token comment"> */</span>
 </span></code><div onclick="copied(this)" data-code="/*
  这里是段落注释
  */
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>单行注释</p>
-    <pre><code class="code-highlight"><span class="code-line">// 这里是单行注释
+<p>单行注释</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token comment">// 这里是单行注释</span>
 </span></code><div onclick="copied(this)" data-code="// 这里是单行注释
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h2 id="常量变量"><a class="anchor" aria-hidden="true" tabindex="-1" href="#常量变量"><span class="octicon octicon-link"></span></a>常量、变量</h2>
-    <ul>
-      <li>let常量，不能更改的值（immutable）</li>
-      <li>var变量，可以更改的值（mutable）</li>
-    </ul>
-    <p>声明一个名字叫做 constNumber 的常量，并给它一个值 1987 ，声明一个名字叫做 variableNumber 的变量，并给它一个值为 13，分别输出 constNumber 和 variableNumber 的值，将它保存到 <a href="examples/demo3.swift">demo3.swift</a> 中：</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> constNumber <span class="token operator">=</span> <span class="token number">1987</span>
+<h2 id="常量变量"><a aria-hidden="true" tabindex="-1" href="#常量变量" class="anchor"><span class="icon icon-link"></span></a>常量、变量</h2>
+<ul>
+<li>let常量，不能更改的值（immutable）</li>
+<li>var变量，可以更改的值（mutable）</li>
+</ul>
+<p>声明一个名字叫做 constNumber 的常量，并给它一个值 1987 ，声明一个名字叫做 variableNumber 的变量，并给它一个值为 13，分别输出 constNumber 和 variableNumber 的值，将它保存到 <a href="examples/demo3.swift">demo3.swift</a> 中：</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> constNumber <span class="token operator">=</span> <span class="token number">1987</span>
 </span><span class="code-line"><span class="token keyword">var</span> variableNumber <span class="token operator">=</span> <span class="token number">13</span>
 </span><span class="code-line">
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>constNumber<span class="token punctuation">)</span>
@@ -310,16 +164,16 @@ var variableNumber = 13
 print(constNumber)
 print(variableNumber)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>运行测试它，我们将看到输出结果：</p>
-    <pre><code class="code-highlight"><span class="code-line">$ swift examples/demo3.swift
+<p>运行测试它，我们将看到输出结果：</p>
+<pre><code class="code-highlight"><span class="code-line">$ swift examples/demo3.swift
 </span><span class="code-line">1987
 </span><span class="code-line">13
 </span></code><div onclick="copied(this)" data-code="$ swift examples/demo3.swift
 1987
 13
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>通过上面的例子，我们来测试一下常量和变量的特性，下面代码保存到 <a href="examples/demo4.swift">demo4.swift</a> 文件中</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> constNumber <span class="token operator">=</span> <span class="token number">1987</span>
+<p>通过上面的例子，我们来测试一下常量和变量的特性，下面代码保存到 <a href="examples/demo4.swift">demo4.swift</a> 文件中</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> constNumber <span class="token operator">=</span> <span class="token number">1987</span>
 </span><span class="code-line"><span class="token keyword">var</span> variableNumber <span class="token operator">=</span> <span class="token number">13</span>
 </span><span class="code-line">constNumber <span class="token operator">=</span> variableNumber <span class="token operator">+</span> <span class="token number">1</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>constNumber<span class="token punctuation">)</span>
@@ -328,8 +182,8 @@ var variableNumber = 13
 constNumber = variableNumber + 1
 print(constNumber)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>上面这个错误的例子是，将变量 variableNumber 加 1 赋值给常量 constNumber。这是一个错误的演示，它运行会曝出错误信息，如果你使用 Xcode 将自动有个错误提示，你只需直接点击错误信息就可以自动修改错误，好智能的功能哦。</p>
-    <pre><code class="code-highlight"><span class="code-line">$ swift examples/demo4.swift
+<p>上面这个错误的例子是，将变量 variableNumber 加 1 赋值给常量 constNumber。这是一个错误的演示，它运行会曝出错误信息，如果你使用 Xcode 将自动有个错误提示，你只需直接点击错误信息就可以自动修改错误，好智能的功能哦。</p>
+<pre><code class="code-highlight"><span class="code-line">$ swift examples/demo4.swift
 </span><span class="code-line">examples/demo4.swift:4:13: error: cannot assign to value: 'constNumber' is a 'let' constant
 </span><span class="code-line">constNumber = variableNumber + 1
 </span><span class="code-line">~~~~~~~~~~~ ^
@@ -346,23 +200,23 @@ let constNumber = 1987
 ^~~
 var
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h2 id="运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#运算符"><span class="octicon octicon-link"></span></a>运算符</h2>
-    <p>用来做运算的，上面例子已经使用了运算符 <code>-</code>，其实就是跟数学运算是一样的</p>
-    <ul>
-      <li>加<code>+</code></li>
-      <li>减<code>-</code></li>
-      <li>乘<code>*</code></li>
-      <li>除<code>/</code></li>
-      <li>求余<code>%</code></li>
-      <li>相等<code>==</code></li>
-      <li>不等于<code>a != b</code></li>
-      <li>大于<code>a > b</code></li>
-      <li>小于<code>a &#x3C; b</code></li>
-      <li>大于等于<code>a >= b</code></li>
-      <li>小于等于<code>a &#x3C;= b</code></li>
-    </ul>
-    <p><strong>赋值运算符</strong> <a href="examples/demo5.swift">demo5.swift</a></p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> constNumber <span class="token operator">=</span> <span class="token number">1987</span>              <span class="token comment">// 声明常量 constNumber 值为 1987</span>
+<h2 id="运算符"><a aria-hidden="true" tabindex="-1" href="#运算符" class="anchor"><span class="icon icon-link"></span></a>运算符</h2>
+<p>用来做运算的，上面例子已经使用了运算符 <code>-</code>，其实就是跟数学运算是一样的</p>
+<ul>
+<li>加<code>+</code></li>
+<li>减<code>-</code></li>
+<li>乘<code>*</code></li>
+<li>除<code>/</code></li>
+<li>求余<code>%</code></li>
+<li>相等<code>==</code></li>
+<li>不等于<code>a != b</code></li>
+<li>大于<code>a > b</code></li>
+<li>小于<code>a &#x3C; b</code></li>
+<li>大于等于<code>a >= b</code></li>
+<li>小于等于<code>a &#x3C;= b</code></li>
+</ul>
+<p><strong>赋值运算符</strong> <a href="examples/demo5.swift">demo5.swift</a></p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> constNumber <span class="token operator">=</span> <span class="token number">1987</span>              <span class="token comment">// 声明常量 constNumber 值为 1987</span>
 </span><span class="code-line"><span class="token keyword">var</span> variableNumber <span class="token operator">=</span> <span class="token number">13</span>             <span class="token comment">// 声明变量 variableNumber 值为 13</span>
 </span><span class="code-line">variableNumber <span class="token operator">=</span> constNumber <span class="token operator">-</span> <span class="token number">1</span>    <span class="token comment">// 这里赋值，常量 constNumber 减 1 赋值给变量 variableNumber</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>variableNumber<span class="token punctuation">)</span>               <span class="token comment">// 将 variableNumber 最终的值输出</span>
@@ -371,15 +225,15 @@ var variableNumber = 13             // 声明变量 variableNumber 值为 13
 variableNumber = constNumber - 1    // 这里赋值，常量 constNumber 减 1 赋值给变量 variableNumber
 print(variableNumber)               // 将 variableNumber 最终的值输出
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>运行结果</p>
-    <pre><code class="code-highlight"><span class="code-line">$ swift examples/demo5.swift
-</span><span class="code-line">1986
+<p>运行结果</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ swift examples/demo5.swift
+</span><span class="code-line"><span class="token number">1986</span>
 </span></code><div onclick="copied(this)" data-code="$ swift examples/demo5.swift
 1986
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p><strong>算数运算符</strong> <a href="examples/demo6.swift">demo6.swift</a></p>
-    <p>算数运算符也就是我们常见到的数学运算了，加<code>+</code>、 减<code>-</code>、 乘<code>*</code>、 除<code>/</code>、 求余<code>%</code>。</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">)</span>           <span class="token comment">//  输出 6</span>
+<p><strong>算数运算符</strong> <a href="examples/demo6.swift">demo6.swift</a></p>
+<p>算数运算符也就是我们常见到的数学运算了，加<code>+</code>、 减<code>-</code>、 乘<code>*</code>、 除<code>/</code>、 求余<code>%</code>。</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">)</span>           <span class="token comment">//  输出 6</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">15</span> <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">)</span>              <span class="token comment">//  输出 12</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">23</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span>              <span class="token comment">//  输出 69</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">100.0</span> <span class="token operator">/</span> <span class="token number">2.5</span><span class="token punctuation">)</span>         <span class="token comment">//  输出 40.0</span>
@@ -392,14 +246,14 @@ print(100.0 / 2.5)         //  输出 40.0
 print(90 % 4)              //  输出 2
 print(&#x22;Hello &#x22; + &#x22;Swift!&#x22;) //  输出 Hello Swift!
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>运行结果</p>
-    <pre><code class="code-highlight"><span class="code-line">$ swift examples/demo6.swift
-</span><span class="code-line">6
-</span><span class="code-line">12
-</span><span class="code-line">69
-</span><span class="code-line">40.0
-</span><span class="code-line">2
-</span><span class="code-line">Hello Swift!
+<p>运行结果</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ swift examples/demo6.swift
+</span><span class="code-line"><span class="token number">6</span>
+</span><span class="code-line"><span class="token number">12</span>
+</span><span class="code-line"><span class="token number">69</span>
+</span><span class="code-line"><span class="token number">40.0</span>
+</span><span class="code-line"><span class="token number">2</span>
+</span><span class="code-line">Hello Swift<span class="token operator">!</span>
 </span></code><div onclick="copied(this)" data-code="$ swift examples/demo6.swift
 6
 12
@@ -408,15 +262,15 @@ print(&#x22;Hello &#x22; + &#x22;Swift!&#x22;) //  输出 Hello Swift!
 2
 Hello Swift!
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p><strong>组合赋值运算符</strong></p>
-    <p>比如下面这样的代码，我们完全可以使用组合赋值运算符简写。</p>
-    <pre><code class="code-highlight"><span class="code-line">var variableNumber = 13
+<p><strong>组合赋值运算符</strong></p>
+<p>比如下面这样的代码，我们完全可以使用组合赋值运算符简写。</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> variableNumber <span class="token operator">=</span> <span class="token number">13</span>
 </span><span class="code-line">
-</span><span class="code-line">// 这句是可以使用组合赋值运算符简写
-</span><span class="code-line">variableNumber = variableNumber + 1
+</span><span class="code-line"><span class="token comment">// 这句是可以使用组合赋值运算符简写</span>
+</span><span class="code-line">variableNumber <span class="token operator">=</span> variableNumber <span class="token operator">+</span> <span class="token number">1</span>
 </span><span class="code-line">
-</span><span class="code-line">// 简写
-</span><span class="code-line">variableNumber += 1
+</span><span class="code-line"><span class="token comment">// 简写</span>
+</span><span class="code-line">variableNumber <span class="token operator">+=</span> <span class="token number">1</span>
 </span></code><div onclick="copied(this)" data-code="var variableNumber = 13
 
 // 这句是可以使用组合赋值运算符简写
@@ -425,8 +279,8 @@ variableNumber = variableNumber + 1
 // 简写
 variableNumber += 1
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>来个各种合赋值运算符例子 <a href="examples/demo7.swift">demo7.swift</a></p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> example <span class="token operator">=</span> <span class="token number">13</span>
+<p>来个各种合赋值运算符例子 <a href="examples/demo7.swift">demo7.swift</a></p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> example <span class="token operator">=</span> <span class="token number">13</span>
 </span><span class="code-line">
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"输出结果："</span></span><span class="token punctuation">,</span>example<span class="token punctuation">)</span>
 </span><span class="code-line">example <span class="token operator">+=</span> <span class="token number">1</span>
@@ -453,32 +307,32 @@ print(&#x22;输出结果：&#x22;,example)
 example %= 1
 print(&#x22;输出结果：&#x22;,example)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p><strong>比较运算符</strong></p>
-    <p>可以通过 相等<code>==</code>、 不等于<code>a != b</code>、 大于<code>a > b</code>、 小于<code>a &#x3C; b</code>、 大于等于<code>a >= b</code>、 小于等于<code>a &#x3C;= b</code>进行比较运算。</p>
-    <p>例如：<code>print(12 != 1)</code> 将会返回一个布尔值 ture</p>
-    <p><strong>三目运算符</strong><a href="examples/demo8.swift">demo8.swift</a></p>
-    <p>三目运算符也就是三元运算符 <code>判断条件 ? 答案 1 : 答案 2</code></p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">86</span>
+<p><strong>比较运算符</strong></p>
+<p>可以通过 相等<code>==</code>、 不等于<code>a != b</code>、 大于<code>a > b</code>、 小于<code>a &#x3C; b</code>、 大于等于<code>a >= b</code>、 小于等于<code>a &#x3C;= b</code>进行比较运算。</p>
+<p>例如：<code>print(12 != 1)</code> 将会返回一个布尔值 ture</p>
+<p><strong>三目运算符</strong><a href="examples/demo8.swift">demo8.swift</a></p>
+<p>三目运算符也就是三元运算符 <code>判断条件 ? 答案 1 : 答案 2</code></p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">86</span>
 </span><span class="code-line"><span class="token keyword">var</span> b <span class="token operator">=</span> a <span class="token operator">!=</span> <span class="token number">86</span> <span class="token operator">?</span> <span class="token string-literal"><span class="token string">"歪果仁"</span></span> <span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"中国人"</span></span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span> b <span class="token punctuation">)</span>
 </span></code><div onclick="copied(this)" data-code="var a = 86
 var b = a != 86 ? &#x22;歪果仁&#x22; : &#x22;中国人&#x22;
 print( b )
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p><strong>区间运算符</strong></p>
-    <ul>
-      <li>闭区间运算符（<code>a...b</code>）定义一个包含从 a 到 b（包括 a 和 b）的所有值的区间。a 的值不能超过 b。</li>
-      <li>半开区间（<code>a..&#x3C;b</code>）定义一个从 a 到 b 但不包括 b 的区间。之所以称为半开区间，是因为该区间包含第一个值而不包括最后的值。</li>
-    </ul>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token number">1</span><span class="token operator">...</span><span class="token number">5</span>
+<p><strong>区间运算符</strong></p>
+<ul>
+<li>闭区间运算符（<code>a...b</code>）定义一个包含从 a 到 b（包括 a 和 b）的所有值的区间。a 的值不能超过 b。</li>
+<li>半开区间（<code>a..&#x3C;b</code>）定义一个从 a 到 b 但不包括 b 的区间。之所以称为半开区间，是因为该区间包含第一个值而不包括最后的值。</li>
+</ul>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token number">1</span><span class="token operator">...</span><span class="token number">5</span>
 </span><span class="code-line"><span class="token number">1</span><span class="token operator">..&#x3C;</span><span class="token number">5</span>
 </span><span class="code-line"><span class="token comment">// 分别表示 1 到 5 和 1 到 4。</span>
 </span></code><div onclick="copied(this)" data-code="1...5
 1..<5
 // 分别表示 1 到 5 和 1 到 4。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>关于它的使用，可以配合 for-in 语句，看到下面代码对于 <code>...</code> 和 <code>..&#x3C;</code> 之间的不同<a href="examples/demo9.swift">demo9.swift</a>：</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"将输出 1 到 5"</span></span><span class="token punctuation">)</span>
+<p>关于它的使用，可以配合 for-in 语句，看到下面代码对于 <code>...</code> 和 <code>..&#x3C;</code> 之间的不同<a href="examples/demo9.swift">demo9.swift</a>：</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"将输出 1 到 5"</span></span><span class="token punctuation">)</span>
 </span><span class="code-line"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">1</span><span class="token operator">...</span><span class="token number">5</span> <span class="token punctuation">{</span>
 </span><span class="code-line">    <span class="token function">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
 </span><span class="code-line"><span class="token punctuation">}</span>
@@ -495,9 +349,9 @@ for i in 1..<5 {
     print(i)
 }
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p><strong>逻辑运算符</strong><a href="examples/demo10.swift">demo10.swift</a></p>
-    <p>三个标准的逻辑运算，非<code>!</code>、与<code>&#x26;&#x26;</code>、或<code>||</code></p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token boolean">true</span>
+<p><strong>逻辑运算符</strong><a href="examples/demo10.swift">demo10.swift</a></p>
+<p>三个标准的逻辑运算，非<code>!</code>、与<code>&#x26;&#x26;</code>、或<code>||</code></p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token boolean">true</span>
 </span><span class="code-line"><span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token boolean">false</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token operator">!</span>a<span class="token punctuation">)</span>           <span class="token comment">// 输出 false</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>a <span class="token operator">&#x26;&#x26;</span> b<span class="token punctuation">)</span>       <span class="token comment">// 输出 false</span>
@@ -508,31 +362,31 @@ print(!a)           // 输出 false
 print(a &#x26;&#x26; b)       // 输出 false
 print(a || b)       // 输出 true
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h2 id="数据类型"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数据类型"><span class="octicon octicon-link"></span></a>数据类型</h2>
-    <p>在前面的例子中使用了<code>let</code> 和 <code>var</code> 声明常量和变量，并给这个常量或者变量赋值，Swift 默认情况直接根据后面的赋值，来确定这个变量或者常量的类型，这个是Swift的一个简写方式。那么完整的一个声明变量或常量，是下面的样子<a href="examples/demo11.swift">demo11.swift</a></p>
-    <pre><code class="code-highlight"><span class="code-line">let constNumber: Int = 1987
-</span><span class="code-line">var name : String = "我是调调！"
+<h2 id="数据类型"><a aria-hidden="true" tabindex="-1" href="#数据类型" class="anchor"><span class="icon icon-link"></span></a>数据类型</h2>
+<p>在前面的例子中使用了<code>let</code> 和 <code>var</code> 声明常量和变量，并给这个常量或者变量赋值，Swift 默认情况直接根据后面的赋值，来确定这个变量或者常量的类型，这个是Swift的一个简写方式。那么完整的一个声明变量或常量，是下面的样子<a href="examples/demo11.swift">demo11.swift</a></p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> constNumber<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">1987</span>
+</span><span class="code-line"><span class="token keyword">var</span> name <span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"我是调调！"</span></span>
 </span><span class="code-line">
-</span><span class="code-line">print(constNumber)
-</span><span class="code-line">print(name)
+</span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>constNumber<span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
 </span></code><div onclick="copied(this)" data-code="let constNumber: Int = 1987
 var name : String = &#x22;我是调调！&#x22;
 
 print(constNumber)
 print(name)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h3 id="数值类型"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数值类型"><span class="octicon octicon-link"></span></a>数值类型</h3>
-    <p>Swift 提供了非常丰富的数据类型</p>
-    <p><strong>整数类型</strong></p>
-    <blockquote>
-      <p>(Int)</p>
-    </blockquote>
-    <p>一般来说，你不需要专门指定整数的长度。Swift 提供了一个特殊的整数类型Int，长度与当前平台的原生字长相同<a href="examples/demo13.swift">demo13.swift</a>：</p>
-    <ul>
-      <li>在32位平台上，Int和Int32长度相同。</li>
-      <li>在64位平台上，Int和Int64长度相同。</li>
-    </ul>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> version <span class="token punctuation">:</span><span class="token class-name">Int32</span> <span class="token operator">=</span> <span class="token number">3</span>
+<h3 id="数值类型"><a aria-hidden="true" tabindex="-1" href="#数值类型" class="anchor"><span class="icon icon-link"></span></a>数值类型</h3>
+<p>Swift 提供了非常丰富的数据类型</p>
+<p><strong>整数类型</strong></p>
+<blockquote>
+<p>(Int)</p>
+</blockquote>
+<p>一般来说，你不需要专门指定整数的长度。Swift 提供了一个特殊的整数类型Int，长度与当前平台的原生字长相同<a href="examples/demo13.swift">demo13.swift</a>：</p>
+<ul>
+<li>在32位平台上，Int和Int32长度相同。</li>
+<li>在64位平台上，Int和Int64长度相同。</li>
+</ul>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> version <span class="token punctuation">:</span><span class="token class-name">Int32</span> <span class="token operator">=</span> <span class="token number">3</span>
 </span><span class="code-line"><span class="token keyword">var</span> version2 <span class="token punctuation">:</span><span class="token class-name">Int64</span> <span class="token operator">=</span> <span class="token number">30</span>
 </span><span class="code-line">
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>version<span class="token punctuation">)</span>
@@ -543,39 +397,35 @@ var version2 :Int64 = 30
 print(version)
 print(version2)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p><strong>浮点数</strong></p>
-    <ul>
-      <li>Double表示64位浮点数。当你需要存储很大或者很高精度的浮点数时请使用此类型。</li>
-      <li>Float表示32位浮点数。精度要求不高的话可以使用此类型。</li>
-    </ul>
-    <blockquote>
-      <p>
-        注意：
-        Double精确度很高，至少有15位数字，而Float最少只有6位数字。选择哪个类型取决于你的代码需要处理的值的范围。
-      </p>
-    </blockquote>
-    <p><strong>无符号类型</strong></p>
-    <blockquote>
-      <p>(UInt)</p>
-    </blockquote>
-    <p>Swift 也提供了一个特殊的无符号类型UInt。</p>
-    <blockquote>
-      <p>
-        注意：
-        尽量不要使用UInt，除非你真的需要存储一个和当前平台原生字长相同的无符号整数。除了这种情况，最好使用Int，即使你要存储的值已知是非负的。统一使用Int可以提高代码的可复用性，避免不同类型数字之间的转换，并且匹配数字的类型推断。
-      </p>
-    </blockquote>
-    <p><strong>布尔类型</strong></p>
-    <blockquote>
-      <p>(Bool)</p>
-    </blockquote>
-    <p>Swift 有一个基本的布尔（Boolean）类型，叫做Bool。布尔值指逻辑上的值，因为它们只能是真或者假。Swift 有两个布尔常量，true和false。</p>
-    <p><strong>字符和字符串类型</strong></p>
-    <blockquote>
-      <p>(Character/String)</p>
-    </blockquote>
-    <p>只包含一个字符的时候，我们也可以把它作为字符类型，Character 只是 String 的一种特殊情况，一般来说，我们都使用 String 就好了<a href="examples/demo19.swift">demo19.swift</a>：</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> ch<span class="token punctuation">:</span> <span class="token class-name">Character</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"a"</span></span>
+<p><strong>浮点数</strong></p>
+<ul>
+<li>Double表示64位浮点数。当你需要存储很大或者很高精度的浮点数时请使用此类型。</li>
+<li>Float表示32位浮点数。精度要求不高的话可以使用此类型。</li>
+</ul>
+<blockquote>
+<p>注意：
+Double精确度很高，至少有15位数字，而Float最少只有6位数字。选择哪个类型取决于你的代码需要处理的值的范围。</p>
+</blockquote>
+<p><strong>无符号类型</strong></p>
+<blockquote>
+<p>(UInt)</p>
+</blockquote>
+<p>Swift 也提供了一个特殊的无符号类型UInt。</p>
+<blockquote>
+<p>注意：
+尽量不要使用UInt，除非你真的需要存储一个和当前平台原生字长相同的无符号整数。除了这种情况，最好使用Int，即使你要存储的值已知是非负的。统一使用Int可以提高代码的可复用性，避免不同类型数字之间的转换，并且匹配数字的类型推断。</p>
+</blockquote>
+<p><strong>布尔类型</strong></p>
+<blockquote>
+<p>(Bool)</p>
+</blockquote>
+<p>Swift 有一个基本的布尔（Boolean）类型，叫做Bool。布尔值指逻辑上的值，因为它们只能是真或者假。Swift 有两个布尔常量，true和false。</p>
+<p><strong>字符和字符串类型</strong></p>
+<blockquote>
+<p>(Character/String)</p>
+</blockquote>
+<p>只包含一个字符的时候，我们也可以把它作为字符类型，Character 只是 String 的一种特殊情况，一般来说，我们都使用 String 就好了<a href="examples/demo19.swift">demo19.swift</a>：</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> ch<span class="token punctuation">:</span> <span class="token class-name">Character</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"a"</span></span>
 </span><span class="code-line"><span class="token keyword">var</span> emptyString <span class="token operator">=</span> <span class="token string-literal"><span class="token string">""</span></span>               <span class="token comment">// 空字符串字面量</span>
 </span><span class="code-line"><span class="token keyword">var</span> anotherEmptyString <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 初始化 String 实例</span>
 </span><span class="code-line"><span class="token comment">// 两个字符串均为空并等价。</span>
@@ -630,19 +480,19 @@ let shouty = normal.uppercaseString
 let whispered = normal.lowercaseString
 // whispered 值为 &#x22;could you help me, please?&#x22;
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <ul>
-      <li>一个字符串中并不一定占用相同的内存空间</li>
-    </ul>
-    <p>字符串常量可以包括下面这些特殊字符：</p>
-    <ul>
-      <li>空字符<code>\0</code>，反斜杠<code>\</code>，制表符<code>\t</code>，换行符<code>\n</code>，回车符<code>\r</code>，双引号<code>\"</code>和单引号<code>\'</code></li>
-      <li>单字节Unicode字符，<code>\xnn</code>，其中nn是两个十六进制数</li>
-      <li>双字节Unicode字符，<code>\unnnn</code>，其中nnnn是四个十六进制数</li>
-      <li>四字节Unicode字符，<code>\Unnnnnnnn</code>，其中nnnnnnnn是八个十六进制数</li>
-    </ul>
-    <p><strong>数组和字典</strong></p>
-    <p>数组和字典是两种非常长常见的数据类型，在刚才介绍的类型中，一个量通常只能包含一个值。而数组这种类型，就可以容纳相同类型的的多个值；而字典这种类型，可以容纳多个对应关系（一个值唯一对应另一个值）</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> stringArray<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"This"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"is"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"github"</span></span><span class="token punctuation">]</span>
+<ul>
+<li>一个字符串中并不一定占用相同的内存空间</li>
+</ul>
+<p>字符串常量可以包括下面这些特殊字符：</p>
+<ul>
+<li>空字符<code>\0</code>，反斜杠<code>\</code>，制表符<code>\t</code>，换行符<code>\n</code>，回车符<code>\r</code>，双引号<code>\"</code>和单引号<code>\'</code></li>
+<li>单字节Unicode字符，<code>\xnn</code>，其中nn是两个十六进制数</li>
+<li>双字节Unicode字符，<code>\unnnn</code>，其中nnnn是四个十六进制数</li>
+<li>四字节Unicode字符，<code>\Unnnnnnnn</code>，其中nnnnnnnn是八个十六进制数</li>
+</ul>
+<p><strong>数组和字典</strong></p>
+<p>数组和字典是两种非常长常见的数据类型，在刚才介绍的类型中，一个量通常只能包含一个值。而数组这种类型，就可以容纳相同类型的的多个值；而字典这种类型，可以容纳多个对应关系（一个值唯一对应另一个值）</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> stringArray<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"This"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"is"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"github"</span></span><span class="token punctuation">]</span>
 </span><span class="code-line">
 </span><span class="code-line"><span class="token comment">// 并通过下面的方式可以访问数组和字典中的值</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>stringArray<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment">// 访问第0个值, 数组的元素是从0开始记的</span>
@@ -651,65 +501,65 @@ let whispered = normal.lowercaseString
 // 并通过下面的方式可以访问数组和字典中的值
 print(stringArray[0])   // 访问第0个值, 数组的元素是从0开始记的
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h3 id="数值范围"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数值范围"><span class="octicon octicon-link"></span></a>数值范围</h3>
-    <p>下表显示了不同变量类型内存的存储空间，及变量类型的最大最小值：</p>
-    <table>
-      <thead>
-        <tr>
-          <th>类型</th>
-          <th>大小（字节）</th>
-          <th>区间值</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Int8</td>
-          <td>1 字节</td>
-          <td>-127 到 127</td>
-        </tr>
-        <tr>
-          <td>UInt8</td>
-          <td>1 字节</td>
-          <td>0 到 255</td>
-        </tr>
-        <tr>
-          <td>Int32</td>
-          <td>4 字节</td>
-          <td>-2147483648 到 2147483647</td>
-        </tr>
-        <tr>
-          <td>UInt32</td>
-          <td>4 字节</td>
-          <td>0 到 4294967295</td>
-        </tr>
-        <tr>
-          <td>Int64</td>
-          <td>8 字节</td>
-          <td>-9223372036854775808 到 9223372036854775807</td>
-        </tr>
-        <tr>
-          <td>UInt64</td>
-          <td>8 字节</td>
-          <td>0 到 18446744073709551615</td>
-        </tr>
-        <tr>
-          <td>Float</td>
-          <td>4 字节</td>
-          <td>1.2E-38 到 3.4E+38 (~6 digits)</td>
-        </tr>
-        <tr>
-          <td>Double</td>
-          <td>8 字节</td>
-          <td>2.3E-308 到 1.7E+308 (~15 digits)</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3 id="类型别名"><a class="anchor" aria-hidden="true" tabindex="-1" href="#类型别名"><span class="octicon octicon-link"></span></a>类型别名</h3>
-    <p>类型别名对当前的类型定义了另一个名字，类型别名通过使用 typealias 关键字来定义。语法格式如下：</p>
-    <blockquote>
-      <p>typealias 类型名字 = type</p>
-    </blockquote>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token comment">// 例如以下定义了 Int 的类型别名为 Feet：</span>
+<h3 id="数值范围"><a aria-hidden="true" tabindex="-1" href="#数值范围" class="anchor"><span class="icon icon-link"></span></a>数值范围</h3>
+<p>下表显示了不同变量类型内存的存储空间，及变量类型的最大最小值：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>大小（字节）</th><th>区间值</th></tr></thead><tbody><tr><td>Int8</td><td>1 字节</td><td>-127 到 127</td></tr><tr><td>UInt8</td><td>1 字节</td><td>0 到 255</td></tr><tr><td>Int32</td><td>4 字节</td><td>-2147483648 到 2147483647</td></tr><tr><td>UInt32</td><td>4 字节</td><td>0 到 4294967295</td></tr><tr><td>Int64</td><td>8 字节</td><td>-9223372036854775808 到 9223372036854775807</td></tr><tr><td>UInt64</td><td>8 字节</td><td>0 到 18446744073709551615</td></tr><tr><td>Float</td><td>4 字节</td><td>1.2E-38 到 3.4E+38 (~6 digits)</td></tr><tr><td>Double</td><td>8 字节</td><td>2.3E-308 到 1.7E+308 (~15 digits)</td></tr></tbody></table>
+<h3 id="类型别名"><a aria-hidden="true" tabindex="-1" href="#类型别名" class="anchor"><span class="icon icon-link"></span></a>类型别名</h3>
+<p>类型别名对当前的类型定义了另一个名字，类型别名通过使用 typealias 关键字来定义。语法格式如下：</p>
+<blockquote>
+<p>typealias 类型名字 = type</p>
+</blockquote>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token comment">// 例如以下定义了 Int 的类型别名为 Feet：</span>
 </span><span class="code-line"><span class="token keyword">typealias</span> <span class="token class-name">Feet</span> <span class="token operator">=</span> <span class="token class-name">Int</span>
 </span><span class="code-line">
 </span><span class="code-line"><span class="token comment">// 由于前面已经定义了类型别名，那么这里使用Feet也相当于使用Int</span>
@@ -738,9 +588,9 @@ print(distance)
 // 我们使用 playground 执行以上程序，输出结果为：
 // 100·
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h3 id="类型安全"><a class="anchor" aria-hidden="true" tabindex="-1" href="#类型安全"><span class="octicon octicon-link"></span></a>类型安全</h3>
-    <p>Swift 是一个类型安全（type safe）的语言。由于 Swift 是类型安全的，所以它会在编译你的代码时进行类型检查（type checks），并把不匹配的类型标记为错误。这可以让你在开发的时候尽早发现并修复错误。<a href="examples/demo16.swift">demo16.swift</a></p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">import</span> <span class="token class-name">Cocoa</span>
+<h3 id="类型安全"><a aria-hidden="true" tabindex="-1" href="#类型安全" class="anchor"><span class="icon icon-link"></span></a>类型安全</h3>
+<p>Swift 是一个类型安全（type safe）的语言。由于 Swift 是类型安全的，所以它会在编译你的代码时进行类型检查（type checks），并把不匹配的类型标记为错误。这可以让你在开发的时候尽早发现并修复错误。<a href="examples/demo16.swift">demo16.swift</a></p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">import</span> <span class="token class-name">Cocoa</span>
 </span><span class="code-line"><span class="token keyword">var</span> <span class="token class-name">A</span> <span class="token operator">=</span> <span class="token number">42</span>
 </span><span class="code-line"><span class="token class-name">A</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"This is hello"</span></span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">)</span>
@@ -749,18 +599,18 @@ var A = 42
 A = &#x22;This is hello&#x22;
 print(A)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <pre><code class="code-highlight"><span class="code-line">$ swift examples/demo16.swift
-</span><span class="code-line">examples/demo16.swift:3:5: error: cannot assign value of type 'String' to type 'Int'
-</span><span class="code-line">A = "This is hello"
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ swift examples/demo16.swift
+</span><span class="code-line">examples/demo16.swift:3:5: error: cannot assign value of <span class="token builtin class-name">type</span> <span class="token string">'String'</span> to <span class="token builtin class-name">type</span> <span class="token string">'Int'</span>
+</span><span class="code-line">A <span class="token operator">=</span> <span class="token string">"This is hello"</span>
 </span><span class="code-line">    ^~~~~~~~~~~~~~~
 </span></code><div onclick="copied(this)" data-code="$ swift examples/demo16.swift
 examples/demo16.swift:3:5: error: cannot assign value of type &#x27;String&#x27; to type &#x27;Int&#x27;
 A = &#x22;This is hello&#x22;
     ^~~~~~~~~~~~~~~
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h3 id="类型推断"><a class="anchor" aria-hidden="true" tabindex="-1" href="#类型推断"><span class="octicon octicon-link"></span></a>类型推断</h3>
-    <p>如果你没有显式指定类型，Swift 会使用类型推断（type inference）来选择合适的类型。<a href="examples/demo17.swift">demo17.swift</a></p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token comment">// a 会被推测为 Int 类型</span>
+<h3 id="类型推断"><a aria-hidden="true" tabindex="-1" href="#类型推断" class="anchor"><span class="icon icon-link"></span></a>类型推断</h3>
+<p>如果你没有显式指定类型，Swift 会使用类型推断（type inference）来选择合适的类型。<a href="examples/demo17.swift">demo17.swift</a></p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token comment">// a 会被推测为 Int 类型</span>
 </span><span class="code-line"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">42</span>  
 </span><span class="code-line">
 </span><span class="code-line"><span class="token comment">// pi 会被推测为 Double 类型</span>
@@ -787,9 +637,9 @@ let anotherPi = 3 + 0.14159
 print(anotherPi)
 //上面输出 3.14159
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h3 id="元组和集合"><a class="anchor" aria-hidden="true" tabindex="-1" href="#元组和集合"><span class="octicon octicon-link"></span></a>元组和集合</h3>
-    <p>元组不是一种类型，但是却是一种可以表示数据的结构。数组保存多个相同类型的值，而元组则可以保存多个不同类型的值，它的用法如下<a href="examples/demo15.swift">demo15.swift</a>：</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> awesome <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Swift"</span></span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"awesome."</span></span><span class="token punctuation">)</span>
+<h3 id="元组和集合"><a aria-hidden="true" tabindex="-1" href="#元组和集合" class="anchor"><span class="icon icon-link"></span></a>元组和集合</h3>
+<p>元组不是一种类型，但是却是一种可以表示数据的结构。数组保存多个相同类型的值，而元组则可以保存多个不同类型的值，它的用法如下<a href="examples/demo15.swift">demo15.swift</a>：</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> awesome <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Swift"</span></span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"awesome."</span></span><span class="token punctuation">)</span>
 </span><span class="code-line"><span class="token keyword">let</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">=</span> awesome
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>    <span class="token comment">// 输出 Swift</span>
 </span><span class="code-line"><span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>    <span class="token comment">// 输出 3</span>
@@ -806,18 +656,16 @@ print(c)    // 输出 awesome.
 // 和数组、字典不同的是，你不能通过[] 的方式来访问元组中的内容，但你可以像这样
 print(awesome.0)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>集合的声明和数组非常类似，都是通过 [] 进行，不同的地方在于集合只能容纳不同的值，而数组可以容纳相同的值：</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> sets<span class="token punctuation">:</span> <span class="token class-name">Set</span><span class="token operator">&#x3C;</span><span class="token class-name">Int</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<p>集合的声明和数组非常类似，都是通过 [] 进行，不同的地方在于集合只能容纳不同的值，而数组可以容纳相同的值：</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">let</span> sets<span class="token punctuation">:</span> <span class="token class-name">Set</span><span class="token operator">&#x3C;</span><span class="token class-name">Int</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
 </span><span class="code-line"><span class="token keyword">let</span> arrays<span class="token punctuation">:</span> <span class="token class-name">Array</span><span class="token operator">&#x3C;</span><span class="token class-name">Int</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
 </span></code><div onclick="copied(this)" data-code="let sets: Set<Int> = [1, 2, 3, 4]
 let arrays: Array<Int> = [1, 1, 1, 1]
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <p>上面定义了 sets 是一个 Set 集合类型，容纳的是 Int 类型的值，数组同理</p>
-    <p>
-      默认情况下，如果你不做显式声明，Swift 会默认将其推断为数组类型
-      关于集合、数组、字典之间的关系，下面这张图很好的展示了这一切：<a href="http://asciiflow.com/">画图工具</a>
-    </p>
-    <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">      Array           Set                   Dictionary
+<p>上面定义了 sets 是一个 Set 集合类型，容纳的是 Int 类型的值，数组同理</p>
+<p>默认情况下，如果你不做显式声明，Swift 会默认将其推断为数组类型
+关于集合、数组、字典之间的关系，下面这张图很好的展示了这一切：<a href="http://asciiflow.com/">画图工具</a></p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">      Array           Set                   Dictionary
 </span><span class="code-line">┏--------------┓ ┏---------------┓ ┏-------------------------┓
 </span><span class="code-line">┆ Index Value  ¦ ¦     Value     ¦ ¦  Keys          Values   ¦
 </span><span class="code-line">¦ ┌---┬------┐ ¦ ¦               ¦ ¦ ┌----┐        ┌-------┐ ¦
@@ -848,14 +696,14 @@ let arrays: Array<Int> = [1, 1, 1, 1]
 ¦ └---┴------┘ ¦ ¦               ¦ ¦               └-------┘ ¦
 ┗--------------┛ ┗---------------┛ ┗-------------------------┛
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h2 id="可选和隐式可选类型"><a class="anchor" aria-hidden="true" tabindex="-1" href="#可选和隐式可选类型"><span class="octicon octicon-link"></span></a>可选和隐式可选类型</h2>
-    <ul>
-      <li>类型后面用问号 <code>?</code> 表示可选类型；</li>
-      <li>类型后面用感叹号 <code>!</code> 表示隐式可选类型；</li>
-    </ul>
-    <h3 id="可选类型"><a class="anchor" aria-hidden="true" tabindex="-1" href="#可选类型"><span class="octicon octicon-link"></span></a>可选类型</h3>
-    <p>当基础类型（整形、浮点、布尔等）没有值时，是不能使用的。Swift 为了表达这种状态，对类型提供了可选的概念。在某个类型后面添加 ? 可以表示一个可选类型，这个可选类型有两种状态：1. 有值；2. 没值</p>
-    <pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> optionalInteger<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token operator">?</span>
+<h2 id="可选和隐式可选类型"><a aria-hidden="true" tabindex="-1" href="#可选和隐式可选类型" class="anchor"><span class="icon icon-link"></span></a>可选和隐式可选类型</h2>
+<ul>
+<li>类型后面用问号 <code>?</code> 表示可选类型；</li>
+<li>类型后面用感叹号 <code>!</code> 表示隐式可选类型；</li>
+</ul>
+<h3 id="可选类型"><a aria-hidden="true" tabindex="-1" href="#可选类型" class="anchor"><span class="icon icon-link"></span></a>可选类型</h3>
+<p>当基础类型（整形、浮点、布尔等）没有值时，是不能使用的。Swift 为了表达这种状态，对类型提供了可选的概念。在某个类型后面添加 ? 可以表示一个可选类型，这个可选类型有两种状态：1. 有值；2. 没值</p>
+<pre class="language-swift"><code class="language-swift code-highlight"><span class="code-line"><span class="token keyword">var</span> optionalInteger<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token operator">?</span>
 </span><span class="code-line">optionalInteger <span class="token operator">=</span> <span class="token number">404</span>
 </span><span class="code-line">
 </span><span class="code-line"><span class="token keyword">if</span> optionalInteger <span class="token operator">!=</span> <span class="token nil constant">nil</span> <span class="token punctuation">{</span>   <span class="token comment">// 确定可选类型包含值后可以在变量名后加!强制解析</span>
@@ -888,96 +736,103 @@ if errorCode != nil {
     print(errorCode!)// 404
 }
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-    <h2 id="问题解决"><a class="anchor" aria-hidden="true" tabindex="-1" href="#问题解决"><span class="octicon octicon-link"></span></a>问题解决</h2>
-    <ul>
-      <li><a href="https://github.com/Homebrew/homebrew-core/issues/2712">swift NameError: name 'run_one_line' is not defined</a></li>
-    </ul>
-    <h2 id="工具"><a class="anchor" aria-hidden="true" tabindex="-1" href="#工具"><span class="octicon octicon-link"></span></a>工具</h2>
-    <ul>
-      <li><a href="https://github.com/Carthage/Carthage">Carthage</a> 一个简单的，分散的Cocoa依赖管理器</li>
-      <li><a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a> Swift和Objective-C Cocoa项目的依赖管理器。</li>
-    </ul>
-    <h2 id="web框架"><a class="anchor" aria-hidden="true" tabindex="-1" href="#web框架"><span class="octicon octicon-link"></span></a>Web框架</h2>
-    <ul>
-      <li><a href="https://github.com/apple/swift-nio">apple/swift-nio</a></li>
-      <li><a href="https://github.com/vapor/vapor">Vapor</a></li>
-      <li><a href="https://github.com/PerfectlySoft/Perfect">Perfect</a></li>
-      <li><a href="https://github.com/IBM-Swift/Kitura">Kitura</a></li>
-      <li><a href="https://github.com/Zewo/Zewo">Zewo</a></li>
-      <li><a href="https://github.com/amzn/smoke-framework">Smoke</a></li>
-    </ul>
-    <h2 id="参考教程"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参考教程"><span class="octicon octicon-link"></span></a>参考教程</h2>
-    <ul>
-      <li><a href="http://special.csdncms.csdn.net/the-swift-programming-language-in-chinese/Introduction.shtml">The Swift Programming Language 中文版</a></li>
-      <li><a href="https://swift.org/documentation/#the-swift-programming-language">官方文档The Swift Programming Language</a></li>
-      <li><a href="https://github.com/numbbbbb/the-swift-programming-language-in-chinese">官方文档的中文版The Swift Programming Language中文版</a></li>
-      <li><a href="https://darielchen.github.io/SwiftManual/">Swift3.0语法速查手册</a></li>
-      <li><a href="https://ming1016.github.io/2021/11/23/daiming-swift-pamphlet/">戴铭的 Swift 小册子</a></li>
-      <li><a href="https://github.com/pointfreeco/episode-code-samples">探索函数式编程和 Swift 的视频系列</a></li>
-      <li><a href="https://serialcoder.dev/category/text-tutorials/swiftui/">SwiftUI 相关文章</a></li>
-      <li><a href="https://www.shiyanlou.com/courses/611">深入浅出 Swift 3</a></li>
-      <li><a href="http://c.biancheng.net/cpp/swift/jiaocheng/">Swift教程</a></li>
-      <li><a href="http://www.imooc.com/search/course?words=swift">慕课网Swift教程</a></li>
-      <li><a href="http://swifter.tips/">Swift 必备 tips</a></li>
-      <li><a href="http://www.swiftguide.cn/">Swift 学习指引</a></li>
-      <li><a href="http://swiftcafe.io/">swiftcafe</a></li>
-      <li><a href="http://swift.gg/">SwiftGG</a></li>
-      <li><a href="http://swiftweekly.cn/">swiftweekly</a></li>
-      <li><a href="http://blog.dianqk.org/">dianqk</a></li>
-    </ul>
-    <h2 id="contributors"><a class="anchor" aria-hidden="true" tabindex="-1" href="#contributors"><span class="octicon octicon-link"></span></a>Contributors</h2>
-    <p>As always, thanks to our amazing contributors!</p><a href="https://github.com/jaywcjlove/swift-tutorial/graphs/contributors"><img src="https://jaywcjlove.github.io/swift-tutorial/CONTRIBUTORS.svg"></a>
-    <p>Made with <a href="https://github.com/jaywcjlove/github-action-contributors">action-contributors</a>.</p>
-    <h2 id="license"><a class="anchor" aria-hidden="true" tabindex="-1" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
-    <p>Licensed under the MIT License.</p>
-  <style>.markdown-body pre .copied {
-  display: flex;
-  position: absolute;
-  cursor: pointer;
-  color: #a5afbb;
-  top: 6px;
-  right: 6px;
-  border-radius: 5px;
-  background: #82828226;
-  padding: 6px;
-  font-size: 12px;
-  transition: all .3s;
-}
-.markdown-body pre .copied:not(.active) {
-  visibility: hidden;
-}
-.markdown-body pre:hover .copied {
-  visibility: visible;
-}
-.markdown-body pre:hover .copied:hover {
-  background: #4caf50;
-  color: #fff;
-}
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
-  background: #2e9b33;
-  color: #fff;
-}
-.markdown-body pre .copied .octicon-copy {
-  display: block;
-}
-.markdown-body pre .copied .octicon-check {
-  display: none;
-}
-.markdown-body pre .active .octicon-copy {
-  display: none;
-}
-.markdown-body pre .active .octicon-check {
-  display: block;
-}</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
+<h2 id="问题解决"><a aria-hidden="true" tabindex="-1" href="#问题解决" class="anchor"><span class="icon icon-link"></span></a>问题解决</h2>
+<ul>
+<li><a href="https://github.com/Homebrew/homebrew-core/issues/2712">swift NameError: name 'run_one_line' is not defined</a></li>
+</ul>
+<h2 id="工具"><a aria-hidden="true" tabindex="-1" href="#工具" class="anchor"><span class="icon icon-link"></span></a>工具</h2>
+<ul>
+<li><a href="https://github.com/Carthage/Carthage">Carthage</a> 一个简单的，分散的Cocoa依赖管理器</li>
+<li><a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a> Swift和Objective-C Cocoa项目的依赖管理器。</li>
+</ul>
+<h2 id="web框架"><a aria-hidden="true" tabindex="-1" href="#web框架" class="anchor"><span class="icon icon-link"></span></a>Web框架</h2>
+<ul>
+<li><a href="https://github.com/apple/swift-nio">apple/swift-nio</a></li>
+<li><a href="https://github.com/vapor/vapor">Vapor</a></li>
+<li><a href="https://github.com/PerfectlySoft/Perfect">Perfect</a></li>
+<li><a href="https://github.com/IBM-Swift/Kitura">Kitura</a></li>
+<li><a href="https://github.com/Zewo/Zewo">Zewo</a></li>
+<li><a href="https://github.com/amzn/smoke-framework">Smoke</a></li>
+</ul>
+<h2 id="参考教程"><a aria-hidden="true" tabindex="-1" href="#参考教程" class="anchor"><span class="icon icon-link"></span></a>参考教程</h2>
+<ul>
+<li><a href="http://special.csdncms.csdn.net/the-swift-programming-language-in-chinese/Introduction.shtml">The Swift Programming Language 中文版</a></li>
+<li><a href="https://swift.org/documentation/#the-swift-programming-language">官方文档The Swift Programming Language</a></li>
+<li><a href="https://github.com/numbbbbb/the-swift-programming-language-in-chinese">官方文档的中文版The Swift Programming Language中文版</a></li>
+<li><a href="https://darielchen.github.io/SwiftManual/">Swift3.0语法速查手册</a></li>
+<li><a href="https://ming1016.github.io/2021/11/23/daiming-swift-pamphlet/">戴铭的 Swift 小册子</a></li>
+<li><a href="https://github.com/pointfreeco/episode-code-samples">探索函数式编程和 Swift 的视频系列</a></li>
+<li><a href="https://serialcoder.dev/category/text-tutorials/swiftui/">SwiftUI 相关文章</a></li>
+<li><a href="https://www.shiyanlou.com/courses/611">深入浅出 Swift 3</a></li>
+<li><a href="http://c.biancheng.net/cpp/swift/jiaocheng/">Swift教程</a></li>
+<li><a href="http://www.imooc.com/search/course?words=swift">慕课网Swift教程</a></li>
+<li><a href="http://swifter.tips">Swift 必备 tips</a></li>
+<li><a href="http://www.swiftguide.cn">Swift 学习指引</a></li>
+<li><a href="http://swiftcafe.io">swiftcafe</a></li>
+<li><a href="http://swift.gg">SwiftGG</a></li>
+<li><a href="http://swiftweekly.cn">swiftweekly</a></li>
+<li><a href="http://blog.dianqk.org">dianqk</a></li>
+</ul>
+<h2 id="contributors"><a aria-hidden="true" tabindex="-1" href="#contributors" class="anchor"><span class="icon icon-link"></span></a>Contributors</h2>
+<p>As always, thanks to our amazing contributors!</p>
+<a href="https://github.com/jaywcjlove/swift-tutorial/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/swift-tutorial/CONTRIBUTORS.svg">
+</a>
+<p>Made with <a href="https://github.com/jaywcjlove/github-action-contributors">action-contributors</a>.</p>
+<h2 id="license"><a aria-hidden="true" tabindex="-1" href="#license" class="anchor"><span class="icon icon-link"></span></a>License</h2>
+<p>Licensed under the MIT License.</p>
+    
 
-function copied(target, str) {
-  target.classList.add('active');
-  copyTextToClipboard(target.dataset.code, function() {
-    setTimeout(() => {
-      target.classList.remove('active');
-    }, 2000);
-  });
-}</script></markdown-style></body>
+<footer class="article-footer warpper">
+  <section>
+    
+    <a href="https://github.com/jaywcjlove/swift-tutorial/blob/master/README.md" class="edit-button" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+      </svg>
+      <span>Edit this page on GitHub</span>
+    </a>
+    
+    <span class="atime">2022/04/21</span>
+    
+  </section>
+  
+  
+</footer>
+
+  </markdown-style>
+  
+<nav class="tocs">
+  <aside class="inner toc"></aside>
+</nav>
+
+
+<script src="js/tocbot.min.js?v=4.18.2"></script>
+<script>
+tocbot.init({
+  tocSelector: 'aside.inner',
+  contentSelector: 'markdown-style',
+  positionFixedSelector: 'aside.inner',
+  headingSelector: 'h1, h2, h3, h4',
+  collapseDepth: 2,
+
+  includeHtml: true,
+  includeTitleTags: false,
+  hasInnerContainers: true,
+  onClick: (e) => { console.log('you clicked a link', e) },
+  headingsOffset: 40,
+  scrollSmoothOffset: -40,
+});
+</script>
+
+</div>
+
+
+<div class="footer warpper">
+  Released under the MIT License. Copyright © 2022 Kenny Wong<br />
+Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a> v1.10.11
+
+</div>
+
+</body>
 </html>
