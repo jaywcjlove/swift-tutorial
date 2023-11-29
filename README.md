@@ -3,6 +3,7 @@ Swift入门教程、读书笔记
 ===
 <!--idoc:ignore:end-->
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![CI](https://github.com/jaywcjlove/swift-tutorial/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/swift-tutorial/actions/workflows/ci.yml)
 
 如果你已经掌握了一些 Swift 语法基础了，可以通过 [SwiftUI Example](https://github.com/jaywcjlove/swiftui-example) 来练习一些示例进行技术的提升。
