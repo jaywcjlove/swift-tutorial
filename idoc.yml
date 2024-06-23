@@ -7,9 +7,12 @@ cacheFileStat: true
 homepage: https://wangchujiang.com/swift-tutorial/
 
 menus:
-  Home: index.html
-  Sponsor: 
+  首页: index.html
+  捐赠: 
     url: https://wangchujiang.com/#/sponsor
+    target: __blank
+  应用: 
+    url: https://wangchujiang.com/#/app
     target: __blank
 
 editButton: 
