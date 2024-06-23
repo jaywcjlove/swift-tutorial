@@ -8,7 +8,7 @@ Swift入门教程、读书笔记
 
 如果你已经掌握了一些 Swift 语法基础了，可以通过 [SwiftUI Example](https://github.com/jaywcjlove/swiftui-example) 来练习一些示例进行技术的提升。
 
-✦ 我的 macOS 应用程序:
+✦ 我的 macOS 应用程序 ✦
 
 <div style="display: inline_block">
   <a target="_blank" href="https://wangchujiang.com/copybook-generator/" title="Copybook Generator for macOS/iOS"><img align="center" alt="Copybook Generator" height="50" width="50" src="https://github.com/jaywcjlove/jaywcjlove/assets/1680273/b90e42ff-158b-4534-82ca-5898fd0e8d73"></a>
