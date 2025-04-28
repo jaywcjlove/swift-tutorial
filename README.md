@@ -11,6 +11,7 @@ Swift入门教程、读书笔记
 ✦ 欢迎下载我的 [macOS/iOS](https://wangchujiang.com/#app) 应用程序来支持我，谢谢 ✦
 
 <div style="display: inline_block">
+  <a target="_blank" href="https://wangchujiang.com/audioer/" title="Audioer for macOS"><img align="center" alt="Audioer" height="52" width="52" src="https://github.com/user-attachments/assets/7a836865-8c90-4119-87bc-19e06a76c957"></a>
   <a target="_blank" href="https://wangchujiang.com/file-sentinel/" title="FileSentinel for macOS"><img align="center" alt="FileSentinel" height="52" width="52" src="https://github.com/user-attachments/assets/28bce2cc-290e-45bf-9068-585ff6ecafe9"></a>
   <a target="_blank" href="https://wangchujiang.com/videoer/" title="Videoer for macOS"><img align="center" alt="Videoer" height="52" width="52" src="https://github.com/user-attachments/assets/12c02a7a-109e-4048-91f4-ab2dfd1e264e"></a>
   <a target="_blank" href="https://wangchujiang.com/key-clicker/" title="KeyClicker for macOS"><img align="center" alt="KeyClicker" height="50" width="50" src="https://github.com/user-attachments/assets/5a19fcb9-cb81-4855-b4ea-31c604d9612a"></a>
