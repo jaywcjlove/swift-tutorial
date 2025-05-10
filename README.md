@@ -36,6 +36,13 @@ Swift入门教程、读书笔记
 <a target="_blank" href="https://apps.apple.com/app/6470879005" title="Symbol Scribe for macOS"><img align="center" alt="Symbol Scribe" height="52" width="52" src="https://github.com/jaywcjlove/jaywcjlove/assets/1680273/c7249f05-fa70-4def-a1e9-571d5f171fc9"></a>
 </div>
 
+欢迎下载 [DevTutor](https://apps.apple.com/app/devtutor/id6471227008)，这是一款速查手册应用，旨在帮助开发者快速使用 SwiftUI 构建出色的应用程序。
+
+<p>
+  <a target="_blank" href="https://apps.apple.com/app/devtutor/id6471227008" title="DevTutor for SwiftUI AppStore"><img alt="DevTutor for SwiftUI AppStore" src="https://jaywcjlove.github.io/sb/download/macos.svg" height="51">
+  </a>
+</p>
+
 <!--idoc:ignore:start-->
 
 ## 示例目录
