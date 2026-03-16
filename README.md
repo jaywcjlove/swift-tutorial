@@ -47,8 +47,6 @@ Swift入门教程、读书笔记
 
 如果你已经掌握了一些 Swift 语法基础了，可以通过 [SwiftUI Example](https://github.com/jaywcjlove/swiftui-example) 来练习一些示例进行技术的提升。
 
-<br/>
-
 欢迎下载 <a href="https://apps.apple.com/app/devtutor/id6471227008" target="_blank">DevTutor</a>，这是一款速查手册应用，旨在帮助开发者快速使用 SwiftUI 构建出色的应用程序。
 <br/><br/>
 <p>
