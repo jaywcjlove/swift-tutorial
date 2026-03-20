@@ -1,5 +1,3 @@
-[English](./README.md) • <ruby> [sgo](https://github.com/jaywcjlove/sgo) <rt>Nodejs</rt></ruby>
-
 <div markdown="1">
   <sup>使用<a href="https://wangchujiang.com/#/app" target="_blank">我的应用</a>也是一种<a href="https://wangchujiang.com/#/sponsor" target="_blank">支持</a>我的方式：</sup>
   <br>
